@@ -3,12 +3,16 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
-    uri: 'https://senheng-upgrade-staging.testingnow.me/graphql',
+    uri: process.env.NODE_ENV !== 'production'
+        ? 'https://senheng-upgrade-staging.testingnow.me/graphql'
+        : 'https://magento.senheng.com.my/graphql'
 });
 
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
-  const token = 'inwyzt1j98qbg4l130v1iambkhjv1n40';
+  const token = process.env.NODE_ENV !== 'production' 
+    ? 'inwyzt1j98qbg4l130v1iambkhjv1n40'
+    : 'iyubu7xybryry7ky6uqupjr75p2j4z7d';
   // return the headers to the context so httpLink can read them
   return {
     headers: {

@@ -1,10 +1,10 @@
-import { useMutation, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
+import { useRouter } from 'next/router';
 import Component from './components'
 import { CustomerGetWaitingStatus } from '../../services/graphql/schema';
 
 const Microsite = () => {
-    // const [dataWaitingStatus] = useMutation(CustomerGetWaitingStatus);
-
+    const router = useRouter();
     const { data, loading, error, refetch: refetchDataCustomer } = useQuery(CustomerGetWaitingStatus, {
         variables: {
             browserId: 'browser123',
@@ -20,7 +20,7 @@ const Microsite = () => {
         );
     }
 
-    return <Component data={data} refetchDataCustomer={refetchDataCustomer} />
+    return <Component data={data} refetchDataCustomer={refetchDataCustomer} router={router} />
 };
 
 export default Microsite;

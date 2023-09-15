@@ -1,20 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
-import { useRouter } from 'next/router';
 
 const Microsite = (props) => {
-    const { data, refetchDataCustomer = () => {} } = props;
-    const router = useRouter();
+    const { data, refetchDataCustomer = () => {}, router } = props;
 
     if (data && data.getWaitingStatus) {
         setInterval(() => {
-            console.log(1)
-            refetchDataCustomer();
+            if (data.getWaitingStatus.allow_to_pdp) {
+                clearInterval();
+                router.push(data.getWaitingStatus.url_destination);
+            } else {
+                refetchDataCustomer();
+            }
         }, 60000);
-        if (data.getWaitingStatus.allow_to_pdp) {
-            router.push(`${data.getWaitingStatus.url_destination}?browserId=${router.query.browserId}`)
-        }
     }
 
     return (

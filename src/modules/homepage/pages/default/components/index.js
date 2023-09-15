@@ -2,21 +2,20 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
 import { useRouter } from 'next/router';
-import { storeCode } from '@config';
 
-let globalTimeout = null;
-const Microsite = () => {
+const Microsite = (props) => {
+    const { data, refetchDataCustomer = () => {} } = props;
     const router = useRouter();
 
-    // React.useEffect(() => {
-    //     if (globalTimeout) {
-    //         clearTimeout(globalTimeout);
-    //     }
-    //     globalTimeout = setTimeout(() => {
-    //         router.push('/apple-iphone-14-pro-max.html');
-    //     }, 10000);
-    // }, []);
-    console.log(storeCode)
+    if (data && data.getWaitingStatus) {
+        setInterval(() => {
+            console.log(1)
+            refetchDataCustomer();
+        }, 60000);
+        if (data.getWaitingStatus.allow_to_pdp) {
+            router.push(`${data.getWaitingStatus.url_destination}?browserId=${router.query.browserId}`)
+        }
+    }
 
     return (
         <div className="error-container">
@@ -26,6 +25,9 @@ const Microsite = () => {
                 <h4>Please expect waiting time for less than 10 minutes.</h4>
                 <h4>Loading...</h4>
                 <p>(Please do not refresh this page while waiting.)</p>
+                <button type="submit" onClick={() => submitMutationWaitingStatus()}>
+                    GET WAITING STATUS
+                </button>
             </div>
             <style jsx>
                 {`

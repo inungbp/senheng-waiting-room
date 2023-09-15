@@ -24,9 +24,6 @@ const Microsite = (props) => {
                 <h4>Please expect waiting time for less than 10 minutes.</h4>
                 <h4>Loading...</h4>
                 <p>(Please do not refresh this page while waiting.)</p>
-                <button type="submit" onClick={() => submitMutationWaitingStatus()}>
-                    GET WAITING STATUS
-                </button>
             </div>
             <style jsx>
                 {`

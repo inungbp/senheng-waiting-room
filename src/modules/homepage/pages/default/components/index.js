@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
+import { intervalCheckStatus } from '@config';
 
 const Microsite = (props) => {
     const { data, refetchDataCustomer = () => {}, router } = props;
@@ -13,7 +14,7 @@ const Microsite = (props) => {
             } else {
                 refetchDataCustomer();
             }
-        }, 60000);
+        }, parseInt(intervalCheckStatus));
     }
 
     return (

@@ -99,6 +99,19 @@ a {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wrapper-loader h2 {
+  color: #000000;
+  text-align: center;
+  font-size: 24px;
+}
+
+.wrapper-loader h2 a {
+  margin-left: 10px;
+  color: #3498db;
 }
 
 .loader {

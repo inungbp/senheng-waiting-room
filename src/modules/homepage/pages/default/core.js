@@ -16,6 +16,7 @@ const Microsite = () => {
         return (
             <div className="wrapper-loader">
                 <div className="loader"></div>
+                <h2>please select your iphone 15 first<a href="https://www.senheng.com.my/testing-cms-7">here</a></h2>
             </div>
         );
     }

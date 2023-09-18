@@ -1,4 +1,5 @@
 import { useQuery } from '@apollo/client';
+import { CMSPageInterest } from '@config';
 import { useRouter } from 'next/router';
 import Component from './components'
 import { CustomerGetWaitingStatus } from '../../services/graphql/schema';
@@ -16,7 +17,7 @@ const Microsite = () => {
         return (
             <div className="wrapper-loader">
                 <div className="loader"></div>
-                <h2>please select your iphone 15 first<a href="https://www.senheng.com.my/testing-cms-7">here</a></h2>
+                <h2>please select your iphone 15 first<a href={CMSPageInterest}>here</a></h2>
             </div>
         );
     }

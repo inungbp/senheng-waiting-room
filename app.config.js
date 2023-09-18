@@ -4,5 +4,6 @@ const CMSPageInterest = 'https://senheng-upgrade-pwa.testingnow.me/iphone15-regi
 
 module.exports = {
     storeCode,
-    intervalCheckStatus
+    intervalCheckStatus,
+    CMSPageInterest
 }

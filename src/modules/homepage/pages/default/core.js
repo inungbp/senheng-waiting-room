@@ -7,8 +7,8 @@ const Microsite = () => {
     const router = useRouter();
     const { data, loading, error, refetch: refetchDataCustomer } = useQuery(CustomerGetWaitingStatus, {
         variables: {
-            browserId: 'browser123',
-            customerId: 1,
+            browserId: router.query.browserId,
+            customerId: parseInt(router.query.id),
         }
     });
 

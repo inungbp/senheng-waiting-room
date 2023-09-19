@@ -1,21 +1,24 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/alt-text */
-import React from 'react';
 import { intervalCheckStatus } from '@config';
+import React from 'react';
 
 const Microsite = (props) => {
     const { data, refetchDataCustomer = () => {}, router } = props;
 
-    if (data && data.getWaitingStatus) {
-        if (data.getWaitingStatus.allow_to_pdp) {
+    // Directly to PDP if allow_to_pdp is true, otherwise, the setInterval function will keep checking the status
+    if (data && data.getWaitingStatus && data.getWaitingStatus.allow_to_pdp) {
+        router.push(data.getWaitingStatus.url_destination);
+    }
+
+    setInterval(() => {
+        if (data && data.getWaitingStatus && data.getWaitingStatus.allow_to_pdp) {
+            clearInterval();
             router.push(data.getWaitingStatus.url_destination);
         } else {
-            setInterval(() => {
-                clearInterval();
-                refetchDataCustomer();
-            }, parseInt(intervalCheckStatus));
+            refetchDataCustomer();
         }
-    }
+    }, parseInt(intervalCheckStatus));
 
     return (
         <div className="error-container">

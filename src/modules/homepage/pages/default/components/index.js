@@ -7,14 +7,14 @@ const Microsite = (props) => {
     const { data, refetchDataCustomer = () => {}, router } = props;
 
     if (data && data.getWaitingStatus) {
-        setInterval(() => {
-            if (data.getWaitingStatus.allow_to_pdp) {
+        if (data.getWaitingStatus.allow_to_pdp) {
+            router.push(data.getWaitingStatus.url_destination);
+        } else {
+            setInterval(() => {
                 clearInterval();
-                router.push(data.getWaitingStatus.url_destination);
-            } else {
                 refetchDataCustomer();
-            }
-        }, parseInt(intervalCheckStatus));
+            }, parseInt(intervalCheckStatus));
+        }
     }
 
     return (

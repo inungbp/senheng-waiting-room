@@ -4,16 +4,14 @@ import { setContext } from '@apollo/client/link/context';
 import { endPoint, tokenHeader } from '@config';
 
 const httpLink = createHttpLink({
-    uri: process.env.NODE_ENV !== 'production'
-        ? endPoint
-        : 'https://magento.senheng.com.my/graphql'
+    uri: endPoint,
 });
+
+console.log()
 
 const authLink = setContext((_, { headers }) => {
   // get the authentication token from local storage if it exists
-  const token = process.env.NODE_ENV !== 'production' 
-    ? tokenHeader
-    : 'iyubu7xybryry7ky6uqupjr75p2j4z7d';
+  const token = tokenHeader;
   // return the headers to the context so httpLink can read them
   return {
     headers: {

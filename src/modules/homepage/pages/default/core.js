@@ -13,10 +13,22 @@ const Microsite = () => {
         }
     });
 
-    if (loading || error) {
+    if (loading) {
+        return (
+            <div className="row">
+                <div className="col-3">
+                    <div className="snippet" data-title="dot-pulse">
+                        <div className="stage">
+                            <div className="dot-pulse" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+    if (error) {
         return (
             <div className="wrapper-loader">
-                <div className="loader"></div>
                 <h2>please select your iphone 15 first<a href={CMSPageInterest}>here</a></h2>
             </div>
         );

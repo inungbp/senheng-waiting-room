@@ -8,13 +8,13 @@ const Microsite = (props) => {
 
     // Directly to PDP if allow_to_pdp is true, otherwise, the setInterval function will keep checking the status
     if (data && data.getWaitingStatus && data.getWaitingStatus.allow_to_pdp) {
-        router.push(data.getWaitingStatus.url_destination);
+        router.push(data && data.getWaitingStatus && data.getWaitingStatus.url_destination);
     }
 
     setInterval(() => {
         if (data && data.getWaitingStatus && data.getWaitingStatus.allow_to_pdp) {
             clearInterval();
-            router.push(data.getWaitingStatus.url_destination);
+            router.push(data && data.getWaitingStatus && data.getWaitingStatus.url_destination);
         } else {
             refetchDataCustomer();
         }

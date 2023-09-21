@@ -56,8 +56,8 @@ const Microsite = (props) => {
                 </div>
             </div>
             <div className="microsite-description">
-                <h2>Be patient, you are next.</h2>
-                <h4>Please expect waiting time for less than 10 minutes.</h4>
+                <h2>The next is soon</h2>
+                <h4>You're now in line to pre-order the iPhone 15.</h4>
                 <div className="container">
                     <h4>Loading</h4>
                     <div className="row">
@@ -70,7 +70,7 @@ const Microsite = (props) => {
                         </div>
                     </div>
                 </div>
-                <p>(Please do not refresh this page while waiting.)</p>
+                <p>Thank you for your patience and support.</p>
             </div>
             <style jsx>
                 {`

@@ -7,18 +7,18 @@ const Microsite = (props) => {
     const { data, refetchDataCustomer = () => {}, router } = props;
 
     // Directly to PDP if allow_to_pdp is true, otherwise, the setInterval function will keep checking the status
-    if (data && data.getWaitingStatus && data.getWaitingStatus.allow_to_pdp) {
-        router.push(data.getWaitingStatus.url_destination);
-    }
+    // if (data && data.getWaitingStatus && data.getWaitingStatus.allow_to_pdp) {
+    //     router.push(data.getWaitingStatus.url_destination);
+    // }
 
-    setInterval(() => {
-        if (data && data.getWaitingStatus && data.getWaitingStatus.allow_to_pdp) {
-            clearInterval();
-            router.push(data.getWaitingStatus.url_destination);
-        } else {
-            refetchDataCustomer();
-        }
-    }, parseInt(intervalCheckStatus));
+    // setInterval(() => {
+    //     if (data && data.getWaitingStatus && data.getWaitingStatus.allow_to_pdp) {
+    //         clearInterval();
+    //         router.push(data.getWaitingStatus.url_destination);
+    //     } else {
+    //         refetchDataCustomer();
+    //     }
+    // }, parseInt(intervalCheckStatus));
 
     return (
         <div className="container-microsite">
@@ -56,7 +56,7 @@ const Microsite = (props) => {
                 </div>
             </div>
             <div className="microsite-description">
-                <h2>The next is soon</h2>
+                <h2>The next is soon.</h2>
                 <h4>You're now in line to pre-order the iPhone 15.</h4>
                 <div className="container">
                     <h4>Loading</h4>
@@ -71,6 +71,7 @@ const Microsite = (props) => {
                     </div>
                 </div>
                 <p>Thank you for your patience and support.</p>
+                <h2 className="loading-reload">Please do not refresh the page while waiting.</h2>
             </div>
             <style jsx>
                 {`
@@ -146,6 +147,12 @@ const Microsite = (props) => {
                     align-items: center;
                     gap: 20px;
                     justify-content: center;
+                }
+                .loading-reload {
+                    color: #7F7F7F;
+                    font-size: 20px;
+                    font-weight: 400;
+                    margin: 8px 0;
                 }
                 @media only screen and (max-width: 600px) {
                     .preorder-offers {

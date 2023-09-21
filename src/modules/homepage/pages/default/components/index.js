@@ -88,7 +88,7 @@ const Microsite = (props) => {
                     width: 180px;
                 }
                 .preorder-offers .preorder-offers--items img {
-                    width: 96px;
+                    width: 100%;
                     height: auto;
                     margin-bottom: 12px;
                 }
@@ -96,6 +96,7 @@ const Microsite = (props) => {
                     color: #000000;
                     margin: 2px 0;
                     font-size: 15px;
+                    text-align: center;
                 }
                 .preorder-offers .preorder-offers--items p {
                     color: #000000;
@@ -171,6 +172,22 @@ const Microsite = (props) => {
                     }
                     p {
                         font-size: 12px;
+                    }
+                }
+                @media only screen and (max-width: 580px) {
+                    .preorder-offers .preorder-offers--items {
+                        width: 140px;
+                    }
+                    .preorder-offers .preorder-offers--items img {
+                        margin-bottom: 4px;
+                    }
+                }
+                @media only screen and (max-width: 375px) {
+                    .preorder-offers .preorder-offers--items {
+                        width: 90px;
+                    }
+                    .preorder-offers .preorder-offers--items img {
+                        margin-bottom: 4px;
                     }
                 }
             `}

@@ -5,7 +5,7 @@ import React from 'react';
 
 let globalInterval = null;
 const Microsite = (props) => {
-    const { data, refetchDataCustomer = () => {}, router } = props;
+    const { data, router, getWaitingStatus } = props;
 
     // Directly to PDP if allow_to_pdp is true, otherwise, the setInterval function will keep checking the status
     // if (data && data.getWaitingStatus && data.getWaitingStatus.allow_to_pdp) {
@@ -15,9 +15,14 @@ const Microsite = (props) => {
     globalInterval = setInterval(() => {
         if (data && data.getWaitingStatus && data.getWaitingStatus.allow_to_pdp) {
             clearInterval(globalInterval);
-            router.push(data && data.getWaitingStatus && data.getWaitingStatus.url_destination);
+            router.push(`${data.getWaitingStatus.url_destination}?browserId=${data.getWaitingStatus.browser_id}&id=${data.getWaitingStatus.id}`);
         } else {
-            refetchDataCustomer();
+            getWaitingStatus({
+                variables : {
+                    browserId: router.query.browserId,
+                    customerId: parseInt(router.query.id),
+                }
+            });
         }
     }, parseInt(intervalCheckStatus));
 

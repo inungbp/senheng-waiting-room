@@ -13,3 +13,20 @@ export const CustomerGetWaitingStatus = gql`
         }
     }
 `;
+
+export const customerEnterPageQueue = gql`
+mutation enterPageQueue(
+    $browserId: String!,
+    $urlDestination: String!,
+) {
+    enterPageQueue(browser_id: $browserId, url_destination: $urlDestination){
+        id
+        browser_id
+        url_destination
+        must_wait
+        allow_to_pdp
+        visitor_count
+        status
+    }
+  }
+`;

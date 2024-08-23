@@ -9,13 +9,13 @@ const Microsite = () => {
     const router = useRouter();
     const [getWaitingStatus, responseWaitingStattus] = useLazyQuery(CustomerGetWaitingStatus);
 
-    if (!Cookies.get('preOrderUid')) {
+    if (!router.query.browserId && !router.query.id) {
         return (
             <div><PreOrderIphone /></div>
         );
     }
 
-    return <Component data={responseWaitingStattus?.data} getWaitingStatus={getWaitingStatus} router={router} />
+    return <div><Component data={responseWaitingStattus?.data} getWaitingStatus={getWaitingStatus} router={router} /></div>
 };
 
 export default Microsite;

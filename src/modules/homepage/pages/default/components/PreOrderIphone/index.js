@@ -64,7 +64,7 @@ const PreOrderIphone = () => {
                             </div>
                             <div className="col-lg-7 col-md-12 col-sm-12 col-12 my-auto px-0-mobile">
                                 <div className="card-body">
-                                    <h5 className="card-title font-weight-bold mb-4">iPhone 15 Pro</h5>
+                                    <h5 className="card-title font-weight-bold mb-4">iPhone 16 Pro</h5>
                                     <div className="spacing-mobile" />
                                     <p className="card-text prod-desc mb-0">from RM5499</p>
                                     <p className="card-text prod-desc mb-0">128GB | 256GB | 512GB | 1TB</p>
@@ -77,7 +77,7 @@ const PreOrderIphone = () => {
                                     <button
                                         disabled={buttonDisabled}
                                         className={buttonDisabled ? 'dialog-button-disabled' : 'dialog-button'}
-                                        onClick={() => handlePhoneSelection('apple-iphone-16')}
+                                        onClick={() => handlePhoneSelection('apple-iphone-16-pro')}
                                     >
                                         {buttonDisabled ? 'COMING SOON' : 'PRE-ORDER NOW'}
                                     </button>
@@ -98,7 +98,7 @@ const PreOrderIphone = () => {
                             </div>
                             <div className="col-lg-7 col-md-12 col-sm-12 col-12 my-auto px-0-mobile">
                                 <div className="card-body">
-                                    <h5 className="card-title font-weight-bold mb-4">iPhone 15 Pro Max</h5>
+                                    <h5 className="card-title font-weight-bold mb-4">iPhone 16 Pro Max</h5>
                                     <p className="card-text prod-desc mb-0">from RM6499</p>
                                     <p className="card-text prod-desc mb-0">256GB | 512GB | 1TB</p>
                                     <div className="d-flex mb-4 justfiy-content-center">
@@ -110,7 +110,7 @@ const PreOrderIphone = () => {
                                     <button
                                         disabled={buttonDisabled}
                                         className={buttonDisabled ? 'dialog-button-disabled' : 'dialog-button'}
-                                        onClick={() => handlePhoneSelection('apple-iphone-16')}
+                                        onClick={() => handlePhoneSelection('apple-iphone-16-pro-max')}
                                     >
                                         {buttonDisabled ? 'COMING SOON' : 'PRE-ORDER NOW'}
                                     </button>
@@ -131,7 +131,7 @@ const PreOrderIphone = () => {
                             </div>
                             <div className="col-lg-7 col-md-12 col-sm-12 col-12 my-auto px-0-mobile">
                                 <div className="card-body">
-                                    <h5 className="card-title font-weight-bold mb-4">iPhone 15</h5>
+                                    <h5 className="card-title font-weight-bold mb-4">iPhone 16</h5>
                                     <div className="spacing-mobile-2" />
                                     <p className="card-text prod-desc mb-0">from RM4399</p>
                                     <p className="card-text prod-desc mb-0">128GB | 256GB | 512GB</p>
@@ -166,7 +166,7 @@ const PreOrderIphone = () => {
                             </div>
                             <div className="col-lg-7 col-md-12 col-sm-12 col-12 my-auto px-0-mobile">
                                 <div className="card-body">
-                                    <h5 className="card-title font-weight-bold mb-4">iPhone 15 Plus</h5>
+                                    <h5 className="card-title font-weight-bold mb-4">iPhone 16 Plus</h5>
                                     <p className="card-text prod-desc mb-0">from RM4899</p>
                                     <p className="card-text prod-desc mb-0">128GB | 256GB | 512GB</p>
                                     <div className="d-flex mb-4 justfiy-content-center">
@@ -179,7 +179,7 @@ const PreOrderIphone = () => {
                                     <button
                                         disabled={buttonDisabled}
                                         className={buttonDisabled ? 'dialog-button-disabled' : 'dialog-button'}
-                                        onClick={() => handlePhoneSelection('apple-iphone-16')}
+                                        onClick={() => handlePhoneSelection('apple-iphone-16-plus')}
                                     >
                                         {buttonDisabled ? 'COMING SOON' : 'PRE-ORDER NOW'}
                                     </button>

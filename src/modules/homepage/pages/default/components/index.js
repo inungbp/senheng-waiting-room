@@ -5,7 +5,7 @@ import React from 'react';
 
 let globalInterval = null;
 const Microsite = (props) => {
-    const { data, router, getWaitingStatus } = props;
+    const { data, router, getWaitingStatus, lineQueue } = props;
 
     // Directly to PDP if allow_to_pdp is true, otherwise, the setInterval function will keep checking the status
     // if (data && data.getWaitingStatus && data.getWaitingStatus.allow_to_pdp) {
@@ -28,183 +28,72 @@ const Microsite = (props) => {
 
     return (
         <div className="container-microsite">
-            <h2>Pre-order Offers.</h2>
-            <div className="preorder-offers">
-                <div className="preorder-offers--items">
-                    <img src="/assets/img/USP_1.webp" />
-                    <h4>Up to 3</h4>
-                    <p>Year Warranty</p>
-                </div>
-                <div className="preorder-offers--items">
-                    <img src="/assets/img/USP_2.webp" />
-                    <h4>Same Day Delivery</h4>
-                    <p>& Free Delivery*</p>
-                </div>
-                <div className="preorder-offers--items">
-                    <img src="/assets/img/USP_3.webp" />
-                    <h4>0% EPP 60 months</h4>
-                    <p>in store exclusive</p>
-                </div>
-                <div className="preorder-offers--items">
-                    <img src="/assets/img/USP_4.webp" />
-                    <h4>Bank Point</h4>
-                    <p>Redemption</p>
-                </div>
-                <div className="preorder-offers--items">
-                    <img src="/assets/img/USP_5.webp" />
-                    <h4>Trade Up and get Extra</h4>
-                    <p>Saving up to RM400</p>
-                </div>
-                <div className="preorder-offers--items">
-                    <img src="/assets/img/USP_6.webp" />
-                    <h4>Total Vouchers</h4>
-                    <p>worth up to RM1,544*</p>
-                </div>
-            </div>
-            <div className="microsite-description">
-                <h2>The next is soon.</h2>
-                <h4>You're now in line to pre-order the iPhone 15.</h4>
-                <div className="container">
-                    <h4>Loading</h4>
-                    <div className="row">
-                        <div className="col-3">
-                            <div className="snippet" data-title="dot-pulse">
-                                <div className="stage">
-                                    <div className="dot-pulse" />
-                                </div>
-                            </div>
+            <div className="wrapper-countdown">
+                <div className="wrapper-countdown__content">
+                    <div className="wrapper-countdown__content--desc">
+                        <h2>You are now in line</h2>
+                        <p>Sit tight! Your turn is almost here. When it comes, you’ll have 20 minutes to browse & purchase. Please do not close or refresh the page.</p>
+                        <div>
+                            <p>Your number in line: {lineQueue}</p>
+                            <p>Your estimated wait time: 5 minutes</p>
                         </div>
                     </div>
+                    <div className="wrapper-countdown__content--img">
+                        <img src="/assets/img/banner-iphone.png" />
+                    </div>
                 </div>
-                <p>Thank you for your patience and support.</p>
-                <h2 className="loading-reload">Please do not refresh the page while waiting.</h2>
             </div>
-            <style jsx>
-                {`
-                .preorder-offers {
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    gap: 40px;
-                    justify-content: center;
-                }
-                .preorder-offers .preorder-offers--items {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    width: 180px;
-                }
-                .preorder-offers .preorder-offers--items img {
-                    width: 100%;
-                    height: auto;
-                    margin-bottom: 12px;
-                }
-                .preorder-offers .preorder-offers--items h4 {
-                    color: #000000;
-                    margin: 2px 0;
-                    font-size: 15px;
-                    text-align: center;
-                }
-                .preorder-offers .preorder-offers--items p {
-                    color: #000000;
-                    font-size: 16px;
-                    text-align: center;
-                    font-weight: 400;
-                    margin: 0;
-                }
-                .container-microsite {
-                    min-height: 100vh;
-                    width: 100vw;
-                    display: flex;
-                    justify-content: center;
-                    background: #FFFFFF;
-                    align-items: center;
-                    flex-direction: column;
-                    position: relative;
-                }
-                .img-center {
-                    margin-bottom: 20px;
-                    width: 100%;
-                    max-width: 600px;
-                    height: auto;
-                }
-                .microsite-description {
-                    height: fit-content;
-                    text-align: center;
-                    margin: 40px auto;
-                    color: #000000;
-                }
-                h2 {
-                    margin: 20px 0;
-                    font-size: 40px;
-                }
-                h4 {
-                    font-size: 20px;
-                    margin-top: 0;
-                }
-                p {
-                    margin: 10px  0;
-                    color: #7F7F7F;
-                    font-size: 20px;
-                    font-weight: bold;
-                }
-                .container {
-                    display: flex;
-                    align-items: center;
-                    gap: 20px;
-                    justify-content: center;
-                }
-                .loading-reload {
-                    color: #7F7F7F;
-                    font-size: 20px;
-                    font-weight: 400;
-                    margin: 8px 0;
-                }
-                @media only screen and (max-width: 600px) {
-                    .preorder-offers {
-                        gap: 12px;
-                    }
-                    .preorder-offers .preorder-offers--items h4 {
-                        font-size: 12px;
-                    }
-                    .preorder-offers .preorder-offers--items p {
-                        font-size: 12px;
-                    }
-                    .img-logo{
-                        max-width: 100px;
-                    }
-                    .img-center {
-                        width: 250px;
-                        height: auto;
-                    }
-                    h2 {
-                        font-size: 20px;
-                    }
-                    h4 {
-                        font-size: 12px;
-                    }
-                    p {
-                        font-size: 12px;
-                    }
-                }
-                @media only screen and (max-width: 580px) {
-                    .preorder-offers .preorder-offers--items {
-                        width: 140px;
-                    }
-                    .preorder-offers .preorder-offers--items img {
-                        margin-bottom: 4px;
-                    }
-                }
-                @media only screen and (max-width: 375px) {
-                    .preorder-offers .preorder-offers--items {
-                        width: 90px;
-                    }
-                    .preorder-offers .preorder-offers--items img {
-                        margin-bottom: 4px;
-                    }
-                }
-            `}
-            </style>
+            <div className="row banner-content">
+                <div className="col-lg-8 banner-content__image">
+                    <img src="/assets/img/iphone16.webp" />
+                </div>
+                <div className="col-lg-4 banner-content__desc text-center">
+                    <div>
+                        <h2 className='font-weight-bold'>Iphone 16</h2>
+                        <h2 className='font-weight-bold'>Name Mock</h2>
+                        <p>Pre-order and enjoy up to 3 years warranty* Pay 0% interest up to 60 months</p>
+                        <a href="https://senheng.com.my" target="_blank">SHOP NOW</a>
+                    </div>
+                </div>
+            </div>
+            <div className="preorder-offers__wrapper">
+                <div className="preorder-offers__title">
+                    <h2>Our Offers. Only at Senheng</h2>
+                    <a href="https://senheng.com.my">LEARN MORE {">"}</a>
+                </div>
+                <div className="preorder-offers">
+                    <div className="preorder-offers--items">
+                        <img src="/assets/img/USP_1.webp" />
+                        <h4 className='font-weight-bold'>Enjoy up to 3 years warranty</h4>
+                        <p>Exclusively for paid PlusOne® members.</p>
+                    </div>
+                    <div className="preorder-offers--items">
+                        <img src="/assets/img/USP_2.webp" />
+                        <h4 className='font-weight-bold'>Nationwide Free Delivery*</h4>
+                        <p>Free Delivery for iPhone 16 from 13 September - 12 October 2024</p>
+                    </div>
+                    <div className="preorder-offers--items">
+                        <img src="/assets/img/USP_3.webp" />
+                        <h4 className='font-weight-bold'>0% Instalment Up To 60 months*</h4>
+                        <p>Choose an installment period from available options.</p>
+                    </div>
+                    <div className="preorder-offers--items">
+                        <img src="/assets/img/USP_4.webp" />
+                        <h4 className='font-weight-bold'>Get RM200 S-Coin Cashback* for selected financial partners.</h4>
+                        <p>Choose from selected banks & buy now pay later to enjoy cashback.</p>
+                    </div>
+                    <div className="preorder-offers--items">
+                        <img src="/assets/img/USP_5.webp" />
+                        <h4 className='font-weight-bold'>Trade Up to get additional rebate up to RM500* upon purchase.</h4>
+                        <p>Trade-in your old device and get trade-up additional rebates.</p>
+                    </div>
+                    <div className="preorder-offers--items">
+                        <img src="/assets/img/USP_6.webp" />
+                        <h4 className='font-weight-bold'>Anniversary Vouchers worth up to RM1,660*</h4>
+                        <p>Get next purchase vouchers during our Anniversary campaign.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };

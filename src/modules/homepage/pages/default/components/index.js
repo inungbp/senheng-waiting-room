@@ -1,30 +1,38 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/alt-text */
-import { intervalCheckStatus } from '@config';
 import React from 'react';
+import Cookies from 'js-cookie';
+import {
+    intervalCheckStatus,
+    hostPreorderIphone,
+    apiCheckQueue,
+    tokenApi
+} from '@config';
 
 let globalInterval = null;
 const Microsite = (props) => {
-    const { data, router, getWaitingStatus, lineQueue } = props;
+    const { router, lineQueue, seriesIphone } = props;
 
-    // Directly to PDP if allow_to_pdp is true, otherwise, the setInterval function will keep checking the status
-    // if (data && data.getWaitingStatus && data.getWaitingStatus.allow_to_pdp) {
-    //     router.push(data && data.getWaitingStatus && data.getWaitingStatus.url_destination);
-    // }
-
-    globalInterval = setInterval(() => {
-        if (data && data.getWaitingStatus && data.getWaitingStatus.allow_to_pdp) {
-            clearInterval(globalInterval);
-            router.push(`${data.getWaitingStatus.url_destination}?browserId=${data.getWaitingStatus.browser_id}&id=${data.getWaitingStatus.id}`);
-        } else {
-            getWaitingStatus({
-                variables : {
-                    browserId: router.query.browserId,
-                    customerId: parseInt(router.query.id),
-                }
-            });
+    const checkQueue = async () => {
+        const response = await fetch(`${apiCheckQueue}?browser_id=${Cookies.get('preOrderUid')}`, {
+            headers: {
+                Authorization: `Bearer ${tokenApi}`,
+                Accept: 'application/json',
+            },
+        });
+        const dataQueue = await response.json();
+        if (dataQueue && dataQueue.is_pdp) {
+            router.push(`${hostPreorderIphone}/${seriesIphone}.html?browser_id=${Cookies.get('preOrderUid')}`);
         }
-    }, parseInt(intervalCheckStatus));
+    };
+
+    React.useEffect(() => {
+        globalInterval = setInterval(() => {
+            if (router.query.browser_id && router.query.position) {
+                checkQueue();
+            }
+        }, parseInt(intervalCheckStatus));
+    }, [router?.query?.browser_id, router?.query?.position]);
 
     return (
         <div className="container-microsite">

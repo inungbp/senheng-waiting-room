@@ -1,30 +1,35 @@
 import React from 'react';
-import { useLazyQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
 import Component from './components'
-import { CustomerGetWaitingStatus } from '../../services/graphql/schema';
 import dynamic from 'next/dynamic'
 
 const Microsite = () => {
     const PreOrderIphone = dynamic(() => import('./components/PreOrderIphone'), { ssr: false });
     const [lineQueue, setLineQueue] = React.useState(0);
+    const [seriesIphone, setSeriesIphone] = React.useState('');
 
     const router = useRouter();
-    const [getWaitingStatus, responseWaitingStattus] = useLazyQuery(CustomerGetWaitingStatus);
 
-    if (!router.query.browserId && !router.query.id) {
+    if (!router.query.browser_id && !router.query.position) {
         return (
-            <div><PreOrderIphone setLineQueue={setLineQueue}/></div>
+            <div>
+                <PreOrderIphone
+                    setLineQueue={setLineQueue}
+                    seriesIphone={seriesIphone}
+                    setSeriesIphone={setSeriesIphone}
+                />
+            </div>
         );
     }
 
     return (
         <div>
             <Component
-                data={responseWaitingStattus?.data}
                 getWaitingStatus={getWaitingStatus}
                 router={router}
                 lineQueue={lineQueue}
+                seriesIphone={seriesIphone}
+                setSeriesIphone={setSeriesIphone}
             />
         </div>);
 };

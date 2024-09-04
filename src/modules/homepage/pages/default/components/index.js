@@ -22,7 +22,7 @@ const Microsite = (props) => {
         });
         const dataQueue = await response.json();
         if (dataQueue && dataQueue.is_pdp) {
-            router.push(`${hostPreorderIphone}/${seriesIphone}.html?key=${Cookies.get('preOrderUid')}`);
+            router.push(`${hostPreorderIphone}/${seriesIphone}.html?key=${Cookies.get('preOrderUid')}&series=${seriesIphone}`);
         }
     };
 

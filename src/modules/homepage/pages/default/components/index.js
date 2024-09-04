@@ -14,7 +14,7 @@ const Microsite = (props) => {
     const { router, lineQueue, seriesIphone } = props;
 
     const checkQueue = async () => {
-        const response = await fetch(`${apiCheckQueue}?key=${Cookies.get('preOrderUid')}&series${seriesIphone}`, {
+        const response = await fetch(`${apiCheckQueue}?key=${Cookies.get('preOrderUid')}&series=${seriesIphone}`, {
             headers: {
                 Authorization: `Bearer ${tokenApi}`,
                 Accept: 'application/json',

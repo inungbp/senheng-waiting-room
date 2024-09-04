@@ -15,7 +15,7 @@ const PreOrderIphone = (props) => {
 
     const handleSubmitWaitingRoom = async (series) => {
         setSeriesIphone(series);
-        const response = await fetch(`${apiAddQueue}?key=${Cookies.get('preOrderUid')}&series${series}`, {
+        const response = await fetch(`${apiAddQueue}?key=${Cookies.get('preOrderUid')}&series=${series}`, {
             method: 'POST',
             headers: {
                 Authorization: `Bearer ${tokenApi}`,

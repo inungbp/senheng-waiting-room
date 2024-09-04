@@ -25,7 +25,6 @@ const Microsite = () => {
     return (
         <div>
             <Component
-                getWaitingStatus={getWaitingStatus}
                 router={router}
                 lineQueue={lineQueue}
                 seriesIphone={seriesIphone}

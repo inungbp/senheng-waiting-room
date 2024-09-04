@@ -26,7 +26,7 @@ const PreOrderIphone = (props) => {
         if (dataQueue) {
             setLineQueue(dataQueue?.position);
             if (dataQueue?.is_pdp) {
-                router.push(`${hostPreorderIphone}/${series}.html?key=${Cookies.get('preOrderUid')}`);
+                router.push(`${hostPreorderIphone}/${series}.html?key=${Cookies.get('preOrderUid')}&series=${series}`);
             } else {
                 router.push(`/?key=${Cookies.get('preOrderUid')}&position=${dataQueue?.position}`);
             }

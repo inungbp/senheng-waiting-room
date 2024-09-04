@@ -14,7 +14,7 @@ const Microsite = (props) => {
     const { router, lineQueue, seriesIphone } = props;
 
     const checkQueue = async () => {
-        const response = await fetch(`${apiCheckQueue}?browser_id=${Cookies.get('preOrderUid')}`, {
+        const response = await fetch(`${apiCheckQueue}?key=${Cookies.get('preOrderUid')}&series${seriesIphone}`, {
             headers: {
                 Authorization: `Bearer ${tokenApi}`,
                 Accept: 'application/json',
@@ -22,17 +22,17 @@ const Microsite = (props) => {
         });
         const dataQueue = await response.json();
         if (dataQueue && dataQueue.is_pdp) {
-            router.push(`${hostPreorderIphone}/${seriesIphone}.html?browser_id=${Cookies.get('preOrderUid')}`);
+            router.push(`${hostPreorderIphone}/${seriesIphone}.html?key=${Cookies.get('preOrderUid')}`);
         }
     };
 
     React.useEffect(() => {
         globalInterval = setInterval(() => {
-            if (router.query.browser_id && router.query.position) {
+            if (router.query.key && router.query.position) {
                 checkQueue();
             }
         }, parseInt(intervalCheckStatus));
-    }, [router?.query?.browser_id, router?.query?.position]);
+    }, [router?.query?.key, router?.query?.position]);
 
     return (
         <div className="container-microsite">

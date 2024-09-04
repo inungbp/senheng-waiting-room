@@ -15,7 +15,7 @@ const PreOrderIphone = (props) => {
 
     const handleSubmitWaitingRoom = async (series) => {
         setSeriesIphone(series);
-        const response = await fetch(`${apiAddQueue}?browser_id=${Cookies.get('preOrderUid')}`, {
+        const response = await fetch(`${apiAddQueue}?key=${Cookies.get('preOrderUid')}&series${series}`, {
             method: 'POST',
             headers: {
                 Authorization: `Bearer ${tokenApi}`,
@@ -26,9 +26,9 @@ const PreOrderIphone = (props) => {
         if (dataQueue) {
             setLineQueue(dataQueue?.position);
             if (dataQueue?.is_pdp) {
-                router.push(`${hostPreorderIphone}/${series}.html?browser_id=${Cookies.get('preOrderUid')}`);
+                router.push(`${hostPreorderIphone}/${series}.html?key=${Cookies.get('preOrderUid')}`);
             } else {
-                router.push(`/?browser_id=${Cookies.get('preOrderUid')}&position=${dataQueue?.position}`);
+                router.push(`/?key=${Cookies.get('preOrderUid')}&position=${dataQueue?.position}`);
             }
         }
     };

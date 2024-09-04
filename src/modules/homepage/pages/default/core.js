@@ -10,7 +10,7 @@ const Microsite = () => {
 
     const router = useRouter();
 
-    if (!router.query.browser_id && !router.query.position) {
+    if (!router.query.key && !router.query.position) {
         return (
             <div>
                 <PreOrderIphone

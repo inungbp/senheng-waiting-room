@@ -7,6 +7,7 @@ import Cookies from 'js-cookie';
 import { v4 as uuidv4 } from 'uuid';
 import { hostPreorderIphone, apiAddQueue, tokenApi } from '@config';
 import PreOrderView from './view';
+import TagManager from 'react-gtm-module';
 
 const PreOrderIphone = (props) => {
     const { setLineQueue, setSeriesIphone } = props;
@@ -25,6 +26,15 @@ const PreOrderIphone = (props) => {
         const dataQueue = await response.json();
         if (dataQueue) {
             setLineQueue(dataQueue?.position);
+            TagManager.dataLayer({
+                dataLayer: {
+                    pageName: 'senheng-waiting-room',
+                    pageType: 'guest',
+                    event: 'add_data_user_iphone16',
+                    data_user_iphone16: Cookies.get('preOrderUid'),
+                    data_series_user_iphone16: series,
+                },
+            });
             if (dataQueue?.is_pdp) {
                 router.push(`${hostPreorderIphone}/${series}.html?key=${Cookies.get('preOrderUid')}&series=${series}`);
             } else {

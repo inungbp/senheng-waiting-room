@@ -1,6 +1,6 @@
 import React from 'react';
-import ViewCountDownStart from './viewCountdownStart';
-import ViewCountDownEnd from './viewCountDownEnd';
+import ViewCountDownStart from './ViewCountDownStartIphone';
+import ViewCountDownEnd from './ViewCountDownEndIphone';
 import ItemIphone from './itemIphone';
 
 const PreOrderView = (props) => {

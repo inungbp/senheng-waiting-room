@@ -1,21 +1,65 @@
-import { useLazyQuery } from '@apollo/client';
+import React from 'react';
 import { useRouter } from 'next/router';
 import Component from './components'
-import { CustomerGetWaitingStatus } from '../../services/graphql/schema';
-import PreOrderIphone from './components/PreOrderIphone';
-import Cookies from 'js-cookie';
+import dynamic from 'next/dynamic'
+import TagManager from 'react-gtm-module';
+import { GTM } from '@config';
 
 const Microsite = () => {
-    const router = useRouter();
-    const [getWaitingStatus, responseWaitingStattus] = useLazyQuery(CustomerGetWaitingStatus);
+    const PreOrderIphone = dynamic(() => import('./components/PreOrderIphone'), { ssr: false });
+    const [lineQueue, setLineQueue] = React.useState(0);
+    const [seriesIphone, setSeriesIphone] = React.useState('');
+    const [estimation, setEstimation] = React.useState(0);
 
-    if (!router.query.browserId && !router.query.id) {
+    const router = useRouter();
+
+    // GTM & GA
+    const tagManagerArgs = {
+        gtmId:
+            typeof publicRuntimeConfig !== 'undefined' && GTM.gtmId[publicRuntimeConfig.appEnv]
+                ? GTM.gtmId[publicRuntimeConfig.appEnv]
+                : GTM.gtmId,
+    };
+
+    React.useEffect(() => {
+        if (GTM.enable) {
+            TagManager.initialize(tagManagerArgs);
+            TagManager.dataLayer({
+                dataLayer: {
+                    pageName: 'senheng-waiting-room',
+                    pageType: 'homepage',
+                    event: 'page_view_waiting_room',
+                    page_view_home: 'senheng-waiting-room',
+                },
+            });
+        };
+    }, [GTM]);
+
+    if (!router.query.key && !router.query.position) {
         return (
-            <div><PreOrderIphone /></div>
+            <div>
+                <PreOrderIphone
+                    setLineQueue={setLineQueue}
+                    seriesIphone={seriesIphone}
+                    setSeriesIphone={setSeriesIphone}
+                    setEstimation={setEstimation}
+                    estimation={estimation}
+                />
+            </div>
         );
     }
 
-    return <div><Component data={responseWaitingStattus?.data} getWaitingStatus={getWaitingStatus} router={router} /></div>
+    return (
+        <div>
+            <Component
+                router={router}
+                lineQueue={lineQueue}
+                seriesIphone={seriesIphone}
+                setSeriesIphone={setSeriesIphone}
+                setEstimation={setEstimation}
+                estimation={estimation}
+            />
+        </div>);
 };
 
 export default Microsite;

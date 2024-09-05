@@ -37,8 +37,8 @@ const PreOrderIphone = (props) => {
                 },
             });
             if (dataQueue?.is_pdp) {
-                router.push(`/?key=${Cookies.get('preOrderUid')}&position=${dataQueue?.position}`);
-                // router.push(`${hostPreorderIphone}/${series}.html?key=${Cookies.get('preOrderUid')}&series=${series}`);
+                // router.push(`/?key=${Cookies.get('preOrderUid')}&position=${dataQueue?.position}`);
+                router.push(`${hostPreorderIphone}/${series}.html?key=${Cookies.get('preOrderUid')}&series=${series}`);
             } else {
                 router.push(`/?key=${Cookies.get('preOrderUid')}&position=${dataQueue?.position}`);
             }

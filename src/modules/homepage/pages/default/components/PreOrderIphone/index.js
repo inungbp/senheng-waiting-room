@@ -10,9 +10,9 @@ import PreOrderView from './view';
 import TagManager from 'react-gtm-module';
 
 const PreOrderIphone = (props) => {
-    const { setLineQueue, setSeriesIphone } = props;
+    const { setLineQueue, setSeriesIphone, setEstimation } = props;
     const router = useRouter();
-    const [messageError, setMessageError] = React.useState('');
+    const [startPreOrder, setStartPreOrder] = React.useState(false);
 
     const handleSubmitWaitingRoom = async (series) => {
         setSeriesIphone(series);
@@ -26,6 +26,7 @@ const PreOrderIphone = (props) => {
         const dataQueue = await response.json();
         if (dataQueue) {
             setLineQueue(dataQueue?.position);
+            setEstimation(dataQueue?.estimation);
             TagManager.dataLayer({
                 dataLayer: {
                     pageName: 'senheng-waiting-room',
@@ -36,7 +37,8 @@ const PreOrderIphone = (props) => {
                 },
             });
             if (dataQueue?.is_pdp) {
-                router.push(`${hostPreorderIphone}/${series}.html?key=${Cookies.get('preOrderUid')}&series=${series}`);
+                router.push(`/?key=${Cookies.get('preOrderUid')}&position=${dataQueue?.position}`);
+                // router.push(`${hostPreorderIphone}/${series}.html?key=${Cookies.get('preOrderUid')}&series=${series}`);
             } else {
                 router.push(`/?key=${Cookies.get('preOrderUid')}&position=${dataQueue?.position}`);
             }
@@ -59,7 +61,8 @@ const PreOrderIphone = (props) => {
             <PreOrderView
                 handlePhoneSelection={handlePhoneSelection}
                 buttonDisabled={buttonDisabled}
-                messageError={messageError}
+                setStartPreOrder={setStartPreOrder}
+                startPreOrder={startPreOrder}
             />
         </div>
     );

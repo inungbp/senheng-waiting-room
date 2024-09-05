@@ -11,7 +11,7 @@ import {
 
 let globalInterval = null;
 const Microsite = (props) => {
-    const { router, lineQueue, seriesIphone } = props;
+    const { router, lineQueue, seriesIphone, estimation } = props;
 
     const checkQueue = async () => {
         const response = await fetch(`${apiCheckQueue}?key=${Cookies.get('preOrderUid')}&series=${seriesIphone}`, {
@@ -43,7 +43,7 @@ const Microsite = (props) => {
                         <p>Sit tight! Your turn is almost here. When it comes, you’ll have 20 minutes to browse & purchase. Please do not close or refresh the page.</p>
                         <div>
                             <p>Your number in line: {lineQueue}</p>
-                            <p>Your estimated wait time: 5 minutes</p>
+                            <p>Your estimated wait time: {estimation} minutes</p>
                         </div>
                     </div>
                     <div className="wrapper-countdown__content--img">

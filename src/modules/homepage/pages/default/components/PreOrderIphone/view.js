@@ -1,12 +1,10 @@
 import React from 'react';
-import useCountDown from '../../../../../helper/countdown';
+import ViewCountDownStart from './viewCountdownStart';
+import ViewCountDownEnd from './viewCountDownEnd';
+import ItemIphone from './itemIphone';
 
 const PreOrderView = (props) => {
-    const { buttonDisabled, handlePhoneSelection, messageError } = props;
-
-    const startDate = new Date();
-    const endDate = new Date('September 12, 2024 01:00:00');
-    const releaseDate = (endDate - startDate) / 1000;
+    const { buttonDisabled, handlePhoneSelection, setStartPreOrder, startPreOrder  } = props;
 
     return (
         <div className="container" id="pre-order">
@@ -19,7 +17,7 @@ const PreOrderView = (props) => {
                         <h2 className='font-weight-bold'>Iphone 16</h2>
                         <h2 className='font-weight-bold'>Name Mock</h2>
                         <p>Pre-order and enjoy up to 3 years warranty* Pay 0% interest up to 60 months</p>
-                        <a href="https://senheng.com.my" target="_blank">SHOP NOW</a>
+                        <a href="#choose-iphone">SHOP NOW</a>
                     </div>
                 </div>
             </div>
@@ -62,155 +60,76 @@ const PreOrderView = (props) => {
                 </div>
             </div>
             <div className="countdown">
-                <h2>Pre-Order ends in</h2>
                 {
-                    useCountDown({
-                        time: Math.trunc(releaseDate),
-                        validation: true,
-                        onTimesUp: () => { console.log('waktu habis') },
-                    })
+                    !startPreOrder ? (
+                        <ViewCountDownStart startPreOrder={startPreOrder} setStartPreOrder={setStartPreOrder}/>
+                    ) : (
+                        <ViewCountDownEnd />
+                    )
                 }
+                
             </div>
-            <div className="choose-iphone__wrapper">
-                <h2 className="font-weight-bold ml-5 mb-5 heading-title">Choose your iPhone.</h2>
-                <div className="row justify-content-center p-2">
-                    <div className="col-lg-6 col-md-6 col-sm-6 col-12 col-fold-12">
-                        <div className="card mb-3 shadow rounded-lg py-4 grow card-wrapper">
-                            <div className="row g-0 mx-4 card-parent">
-                                <div className="col-lg-5 col-md-12 col-sm-12 col-12 my-auto">
-                                    <img
-                                        src="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_tigry_large_2x.png"
-                                        className="img-fluid rounded-lg-start"
-                                        alt="..."
-                                    />
-                                </div>
-                                <div className="col-lg-7 col-md-12 col-sm-12 col-12 my-auto px-0-mobile">
-                                    <div className="card-body">
-                                        <h5 className="card-title font-weight-bold mb-4">iPhone 16 Pro</h5>
-                                        <div className="spacing-mobile" />
-                                        <p className="card-text prod-desc mb-0">from RM5499</p>
-                                        <p className="card-text prod-desc mb-0">128GB | 256GB | 512GB | 1TB</p>
-                                        <div className="d-flex mb-4 justfiy-content-center color-picker">
-                                            <div className="m-1 ccircle pro-swatch-natural-titanium" />
-                                            <div className="m-1 ccircle pro-swatch-blue-titanium" />
-                                            <div className="m-1 ccircle pro-swatch-white-titanium" />
-                                            <div className="m-1 ccircle pro-swatch-black-titanium" />
-                                        </div>
-                                        <button
-                                            disabled={buttonDisabled}
-                                            className={buttonDisabled ? 'dialog-button-disabled' : 'dialog-button'}
-                                            onClick={() => handlePhoneSelection('apple-iphone-16-pro')}
-                                        >
-                                            {buttonDisabled ? 'COMING SOON' : 'PRE-ORDER NOW'}
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-6 col-md-6 col-sm-6 col-12 col-fold-12">
-                        <div className="card mb-3 shadow rounded-lg py-4 grow card-wrapper">
-                            <div className="row g-0 mx-4 card-parent">
-                                <div className="col-lg-5 col-md-12 col-sm-12 col-12 my-auto">
-                                    <img
-                                        src="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
-                                        className="img-fluid rounded-lg-start"
-                                        alt="..."
-                                    />
-                                </div>
-                                <div className="col-lg-7 col-md-12 col-sm-12 col-12 my-auto px-0-mobile">
-                                    <div className="card-body">
-                                        <h5 className="card-title font-weight-bold mb-4">iPhone 16 Pro Max</h5>
-                                        <p className="card-text prod-desc mb-0">from RM6499</p>
-                                        <p className="card-text prod-desc mb-0">256GB | 512GB | 1TB</p>
-                                        <div className="d-flex mb-4 justfiy-content-center color-picker">
-                                            <div className="m-1 ccircle pro-swatch-natural-titanium" />
-                                            <div className="m-1 ccircle pro-swatch-blue-titanium" />
-                                            <div className="m-1 ccircle pro-swatch-white-titanium" />
-                                            <div className="m-1 ccircle pro-swatch-black-titanium" />
-                                        </div>
-                                        <button
-                                            disabled={buttonDisabled}
-                                            className={buttonDisabled ? 'dialog-button-disabled' : 'dialog-button'}
-                                            onClick={() => handlePhoneSelection('apple-iphone-16-pro-max')}
-                                        >
-                                            {buttonDisabled ? 'COMING SOON' : 'PRE-ORDER NOW'}
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-6 col-md-6 col-sm-6 col-12 col-fold-12">
-                        <div className="card mb-3 shadow rounded-lg py-4 grow card-wrapper">
-                            <div className="row g-0 mx-4 card-parent">
-                                <div className="col-lg-5 col-md-12 col-sm-12 col-12 my-auto">
-                                    <img
-                                        src="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15/header_iphone_15_pink_large_2x.png"
-                                        className="img-fluid rounded-lg-start"
-                                        alt="..."
-                                    />
-                                </div>
-                                <div className="col-lg-7 col-md-12 col-sm-12 col-12 my-auto px-0-mobile">
-                                    <div className="card-body">
-                                        <h5 className="card-title font-weight-bold mb-4">iPhone 16</h5>
-                                        <div className="spacing-mobile-2" />
-                                        <p className="card-text prod-desc mb-0">from RM4399</p>
-                                        <p className="card-text prod-desc mb-0">128GB | 256GB | 512GB</p>
-                                        <div className="d-flex mb-4 justfiy-content-center color-picker">
-                                            <div className="m-1 ccircle regular-swatch-pink" />
-                                            <div className="m-1 ccircle regular-swatch-yellow" />
-                                            <div className="m-1 ccircle regular-swatch-green" />
-                                            <div className="m-1 ccircle regular-swatch-blue" />
-                                            <div className="m-1 ccircle regular-swatch-black" />
-                                        </div>
-                                        <button
-                                            disabled={buttonDisabled}
-                                            className={buttonDisabled ? 'dialog-button-disabled' : 'dialog-button'}
-                                            onClick={() => handlePhoneSelection('apple-iphone-16')}
-                                        >
-                                            {buttonDisabled ? 'COMING SOON' : 'PRE-ORDER NOW'}
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-6 col-md-6 col-sm-6 col-12 col-fold-12">
-                        <div className="card mb-3 shadow rounded-lg py-4 grow card-wrapper">
-                            <div className="row g-0 mx-4 card-parent">
-                                <div className="col-lg-5 col-md-12 col-sm-12 col-12 my-auto">
-                                    <img
-                                        src="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15/header_iphone_15_plus_blue_large_2x.png"
-                                        className="img-fluid rounded-lg-start"
-                                        alt="..."
-                                    />
-                                </div>
-                                <div className="col-lg-7 col-md-12 col-sm-12 col-12 my-auto px-0-mobile">
-                                    <div className="card-body">
-                                        <h5 className="card-title font-weight-bold mb-4">iPhone 16 Plus</h5>
-                                        <p className="card-text prod-desc mb-0">from RM4899</p>
-                                        <p className="card-text prod-desc mb-0">128GB | 256GB | 512GB</p>
-                                        <div className="d-flex mb-4 justfiy-content-center color-picker">
-                                            <div className="m-1 ccircle regular-swatch-pink" />
-                                            <div className="m-1 ccircle regular-swatch-yellow" />
-                                            <div className="m-1 ccircle regular-swatch-green" />
-                                            <div className="m-1 ccircle regular-swatch-blue" />
-                                            <div className="m-1 ccircle regular-swatch-black" />
-                                        </div>
-                                        <button
-                                            disabled={buttonDisabled}
-                                            className={buttonDisabled ? 'dialog-button-disabled' : 'dialog-button'}
-                                            onClick={() => handlePhoneSelection('apple-iphone-16-plus')}
-                                        >
-                                            {buttonDisabled ? 'COMING SOON' : 'PRE-ORDER NOW'}
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <p>{messageError}</p>
-                    </div>
+            <div className="choose-iphone" id="choose-iphone">
+                <h2 className="font-weight-bold mb-5 heading-title">Choose your iPhone.</h2>
+                <div className="choose-iphone__wrapper">
+                    <ItemIphone
+                        imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
+                        handlePhoneSelection={handlePhoneSelection}
+                        buttonDisabled={buttonDisabled}
+                        title="iPhone 16 Pro"
+                        price="from RM5499"
+                        memory="128GB | 256GB | 512GB | 1TB"
+                        color={[
+                            "m-1 ccircle pro-swatch-natural-titanium",
+                            "m-1 ccircle pro-swatch-blue-titanium",
+                            "m-1 ccircle pro-swatch-white-titanium",
+                            "m-1 ccircle pro-swatch-black-titanium"
+                        ]}
+                    />
+                    <ItemIphone
+                        imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
+                        handlePhoneSelection={handlePhoneSelection}
+                        buttonDisabled={buttonDisabled}
+                        title="iPhone 16 Pro Max"
+                        price="from RM6499"
+                        memory="256GB | 512GB | 1TB"
+                        color={[
+                            "m-1 ccircle pro-swatch-natural-titanium",
+                            "m-1 ccircle pro-swatch-blue-titanium",
+                            "m-1 ccircle pro-swatch-white-titanium",
+                            "m-1 ccircle pro-swatch-black-titanium"
+                        ]}
+                    />
+                    <ItemIphone
+                        imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
+                        handlePhoneSelection={handlePhoneSelection}
+                        buttonDisabled={buttonDisabled}
+                        title="iPhone 16"
+                        price="from RM4399"
+                        memory="128GB | 256GB | 512GB"
+                        color={[
+                            "m-1 ccircle regular-swatch-pink",
+                            "m-1 ccircle regular-swatch-yellow",
+                            "m-1 ccircle regular-swatch-green",
+                            "m-1 ccircle regular-swatch-blue",
+                            "m-1 ccircle regular-swatch-black"
+                        ]}
+                    />
+                    <ItemIphone
+                        imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
+                        handlePhoneSelection={handlePhoneSelection}
+                        buttonDisabled={buttonDisabled}
+                        title="iPhone 16 Plus"
+                        price="from RM4899"
+                        memory="128GB | 256GB | 512GB"
+                        color={[
+                            "m-1 ccircle regular-swatch-pink",
+                            "m-1 ccircle regular-swatch-yellow",
+                            "m-1 ccircle regular-swatch-green",
+                            "m-1 ccircle regular-swatch-blue",
+                            "m-1 ccircle regular-swatch-black"
+                        ]}
+                    />
                 </div>
             </div>
             <div className="compare-models">
@@ -335,41 +254,8 @@ const PreOrderView = (props) => {
                         margin: 0 auto;
                         color: #000000;
                     }
-                    .pro-swatch-natural-titanium {
-                        background-color: #837f7d;
-                    }
-                    .pro-swatch-blue-titanium {
-                        background-color: #2f4452;
-                    }
-                    .pro-swatch-white-titanium {
-                        background-color: #dddddd;
-                    }
-                    .pro-swatch-black-titanium {
-                        background-color: #1b1b1b;
-                    }
-                    .regular-swatch-pink {
-                        background-color: #e3c8ca;
-                    }
-                    .regular-swatch-yellow {
-                        background-color: #e6e0c1;
-                    }
-                    .regular-swatch-green {
-                        background-color: #cad4c5;
-                    }
-                    .regular-swatch-blue {
-                        background-color: #d4dde0ff;
-                    }
-                    .regular-swatch-black {
-                        background-color: #35393b;
-                    }
                     .prod-desc {
                         font-size: 0.8rem;
-                    }
-                    .ccircle {
-                        width: 15px;
-                        height: 15px;
-                        border-radius: 100%;
-                        border: none;
                     }
                     .card-title {
                         color: black;

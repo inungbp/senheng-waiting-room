@@ -9,6 +9,7 @@ const Microsite = () => {
     const PreOrderIphone = dynamic(() => import('./components/PreOrderIphone'), { ssr: false });
     const [lineQueue, setLineQueue] = React.useState(0);
     const [seriesIphone, setSeriesIphone] = React.useState('');
+    const [estimation, setEstimation] = React.useState(0);
 
     const router = useRouter();
 
@@ -41,6 +42,8 @@ const Microsite = () => {
                     setLineQueue={setLineQueue}
                     seriesIphone={seriesIphone}
                     setSeriesIphone={setSeriesIphone}
+                    setEstimation={setEstimation}
+                    estimation={estimation}
                 />
             </div>
         );
@@ -53,6 +56,8 @@ const Microsite = () => {
                 lineQueue={lineQueue}
                 seriesIphone={seriesIphone}
                 setSeriesIphone={setSeriesIphone}
+                setEstimation={setEstimation}
+                estimation={estimation}
             />
         </div>);
 };

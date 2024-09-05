@@ -39,26 +39,12 @@ const useCountDown = ({ time = 0, validation, onTimesUp }) => {
     const minutes = Math.floor((remainSeconds - (days * 86400) - (hours * 3600)) / 60);
     const seconds = remainSeconds % 60;
 
-    return (
-        <div className="countdown-timer">
-            <div>
-                <p>{days < 10 ? `0${days}` : days.toString()}</p>
-                <p>Days</p>
-            </div>
-            <div>
-                <p>{hours < 10 ? `0${hours}` : hours.toString()}</p>
-                <p>Hours</p>
-            </div>
-            <div>
-                <p>{minutes < 10 ? `0${minutes}` : minutes.toString()}</p>
-                <p>Minutes</p>
-            </div>
-            <div>
-                <p>{seconds < 10 ? `0${seconds}` : seconds.toString()}</p>
-                <p>Seconds</p>
-            </div>
-        </div>
-    );
+    return {
+        maskDays: days < 10 ? `0${days}` : days.toString(),
+        maskHours: hours < 10 ? `0${hours}` : hours.toString(),
+        maskMinutes: minutes < 10 ? `0${minutes}` : minutes.toString(),
+        maskSeconds: seconds < 10 ? `0${seconds}` : seconds.toString(),
+    }
 };
 
 export default useCountDown;

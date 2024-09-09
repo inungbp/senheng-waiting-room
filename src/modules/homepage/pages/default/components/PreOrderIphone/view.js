@@ -161,10 +161,19 @@ const PreOrderView = (props) => {
                     <img src="/assets/img/atome.webp" alt="grab" />
                 </div>
                 <div className="partnership-item">
-                    <img src="/assets/img/aeon.webp" alt="grab" />
+                    <img src="/assets/img/spay.webp" alt="grab" />
+                </div>
+                <div className="partnership-item">
+                    <img src="/assets/img/maybank.webp" alt="grab" />
+                </div>
+                <div className="partnership-item">
+                    <img src="/assets/img/uob.webp" alt="grab" />
                 </div>
                 <div className="partnership-item">
                     <img src="/assets/img/affin.webp" alt="grab" />
+                </div>
+                <div className="partnership-item">
+                    <img src="/assets/img/aeon.webp" alt="grab" />
                 </div>
             </div>
 

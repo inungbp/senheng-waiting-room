@@ -144,6 +144,7 @@ a {
 #pre-order {
   max-width: 1440px;
   margin: 0 auto;
+  padding-bottom: 128px;
 }
 
 .banner-content {
@@ -219,17 +220,21 @@ a {
   gap: 40px;
   margin: 80px 0;
   padding: 0 64px;
+  justify-content: center;
 }
 
 .partnership-item {
   background-color: #f5f5f7;
-  min-height: 300px;
-  width: 48%;
   border-radius: 16px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
+  width: 48%;
 }
+
+.partnership-item img {
+  background-color: #f5f5f7;
+  border-radius: 16px;
+  width: 100%;
+}
+
 
 .partnership-item h2 {
   margin: 0 auto;
@@ -287,6 +292,8 @@ a {
 .choose-iphone__wrapper .card-wrapper__desc button {
   background-color: #1e1d24;
   padding: 8px 12px;
+  border: none;
+  font-weight: 400;
 }
 
 .choose-iphone__wrapper .card-wrapper__desc {
@@ -332,6 +339,142 @@ a {
   border: none;
 }
 
+/* modal offers */
+
+.modal-offers .modal-header h3 {
+  margin: 0;
+}
+
+.modal-offers .modal-header h4 {
+  margin: 0;
+  cursor: pointer;
+}
+
+.modal-offers .modal-body {
+  display: flex;
+  gap: 20px;
+}
+
+.modal-offers .modal-body ul.nav-tabs {
+  max-width: 30%;
+  border-bottom: none;
+  display: flex;
+  height: fit-content;
+}
+
+.modal-offers .modal-body ul li {
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.modal-offers .modal-body ul li button {
+  border-radius: 12px;
+  width: 100%;
+  border: none;
+  background-color: unset;
+  color: #007bff;
+}
+
+.modal-offers .modal-body ul li button:hover {
+  color: #0056b3;
+}
+
+.modal-offers .modal-body ul li .active {
+  background-color: #383838;
+  color: #FFFFFF;
+  border-color: unset;
+}
+
+.modal-offers .modal-body ul li .active:hover {
+  background-color: #383838;
+  color: #FFFFFF;
+}
+
+.modal-offers .modal-body .tab-content {
+  width: 70%;
+}
+
+.modal-offers .modal-body .tab-content img {
+  width: 100%;
+  height: auto;
+}
+
+.modal-offers .modal-body .tab-content ol {
+  padding: 20px;
+}
+
+.modal-offers .modal-body .tab-content ol li {
+  margin-bottom: 8px;
+}
+
+.modal-offers .modal-body .tab-content .learn-more {
+  width: 100%;
+  text-align: center;
+}
+
+.modal-offers .modal-body .tab-content button {
+  background-color: #383838;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.modal-offers .modal-body .tab-content button a {
+  color: #FFFFFF;
+}
+
+.preorder-offers__title .modal-offers__title {
+  background-color: unset;
+  border: none;
+  color: #007bff;
+  padding: 0;
+}
+
+/* outlet */
+.outlet {
+  text-align: center;
+  margin-top: 64px;
+}
+.outlet h2 {
+  margin-bottom: 40px;
+}
+.outlet .outlet-title {
+  margin-bottom: 40px;
+}
+.outlet .outlet-title button {
+  background-color: #1e1d24;
+  padding: 8px 12px;
+  border: none;
+  font-weight: 400;
+  margin: 0 8px;
+  border-radius: 6px;
+}
+.outlet .outlet-title button a {
+  color: #FFFFFF;
+  font-size: 14px;
+}
+.outlet .outlet-content .accordion {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+.outlet .outlet-content .accordion .accordion-item {
+  width: 50%;
+}
+.outlet .outlet-content .accordion .accordion-header {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+.outlet .outlet-content .accordion .accordion-body {
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  border-top: unset;
+  padding: 20px;
+}
+.outlet .outlet-content .accordion .accordion-item button {
+  background-color: rgba(33,37,41, 0.03);
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  padding: 8px;
+}
 
 @media (max-width: 1025px) {
   .partnership-item {
@@ -356,7 +499,7 @@ a {
   }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   .wrapper-countdown__content {
     padding: 40px 16px;
   }
@@ -390,12 +533,13 @@ a {
   .partnership {
     padding: 0 20px;
     gap: 24px;
+    flex-direction: column;
+    margin: 40px 0;
   }
 
   .partnership-item {
-    width: 45%;
-    min-height: 200px;
-    padding: 20px;
+    width: 70%;
+    margin: 0 auto;
   }
   .partnership-item h2 {
     font-size: 16px;
@@ -403,6 +547,57 @@ a {
 
   .choose-iphone__wrapper .card-wrapper {
     min-height: unset;
+    min-width: 210px;
+    padding: 16px;
+  }
+  .choose-iphone__wrapper .card-wrapper img {
+    width: 80px;
+  }
+  .choose-iphone__wrapper .card-wrapper .card-title {
+    margin-bottom: 12px !important;
+    font-size: 16px;
+  }
+  .choose-iphone__wrapper .card-wrapper .card-wrapper__desc p {
+    font-size: 12px;
+  }
+  .choose-iphone__wrapper .card-wrapper .card-wrapper__desc .color-picker {
+    margin-bottom: 12px !important;
+  }
+  .choose-iphone__wrapper .card-wrapper .card-wrapper__desc .color-picker .ccircle {
+    width: 20px;
+    height: 20px;
+  }
+  .choose-iphone__wrapper .card-wrapper .card-wrapper__desc .dialog-button {
+    margin: 0;
+    font-size: 12px;
+  }
+
+  .modal-header h3 {
+    font-size: 20px;
+  }
+  .modal-offers .modal-body {
+    display: flex;
+    flex-direction: column;
+  }
+  .modal-offers .modal-body ul.nav-tabs {
+    max-width: 100%;
+    margin-bottom: 0 !important;
+  }
+  .modal-offers .modal-body .tab-content {
+    width: 100%;
+    font-size: 12px;
+  }
+  .modal-offers .modal-body ul li {
+    margin-bottom: 0;
+    font-size: 12px;
+  }
+
+  .outlet .outlet-content .accordion {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .outlet .outlet-content .accordion .accordion-item {
+    width: 100%;
   }
 }
 
@@ -438,9 +633,9 @@ a {
   }
 
   .partnership-item {
-    min-height: 120px;
-    padding: 12px;
+    width: 90%;
   }
+
   .partnership-item h2 {
     font-size: 12px;
   }
@@ -467,11 +662,17 @@ a {
     font-size: 12px;
   }
 
-  .choose-iphone__wrapper h2 {
+  .choose-iphone {
+    padding: 0;
+    margin: 64px 0;
+  }
+  .choose-iphone .heading-title {
     font-size: 20px;
-    text-align: center;
-    margin-left: 0 !important;
-    margin-bottom: 20px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .choose-iphone .choose-iphone__wrapper {
+    gap: 20px;
   }
 
   .choose-iphone__wrapper .card-parent {
@@ -514,5 +715,13 @@ a {
   }
   .wrapper-countdown__content--img img {
     width: 100%;
+  }
+
+  .outlet h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .outlet .outlet-title button a {
+    font-size: 12px;
   }
 }

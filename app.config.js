@@ -5,8 +5,8 @@ const tokenHeader = 'inwyzt1j98qbg4l130v1iambkhjv1n40';
 const endPoint = 'https://senheng-upgrade-staging.testingnow.me/graphql';
 const hostPreorderIphone = 'https://senheng-upgrade-pwa.testingnow.me';
 const tokenApi = 'djisajd891ye918';
-const apiAddQueue = 'https://senheng-microservice.testingnow.me/api/queue/add';
-const apiCheckQueue = 'https://senheng-microservice.testingnow.me/api/queue/check';
+const apiAddQueue = 'https://senheng-microservice-staging.sandbox.id/api/queue/add';
+const apiCheckQueue = 'https://senheng-microservice-staging.sandbox.id/api/queue/check';
 const GTM = {
     enable: true,
     gtmId: 'GTM-P2J3ZCPB',

@@ -6,7 +6,8 @@ const ItemIphone = (props) => {
         color,
         title,
         price,
-        memory
+        memory,
+        urlIphone,
     } = props;
 
     return (
@@ -33,7 +34,7 @@ const ItemIphone = (props) => {
                 <button
                     disabled={buttonDisabled}
                     className={buttonDisabled ? 'dialog-button-disabled' : 'dialog-button'}
-                    onClick={() => handlePhoneSelection('apple-iphone-16-pro')}
+                    onClick={() => handlePhoneSelection(urlIphone)}
                 >
                     {buttonDisabled ? 'COMING SOON' : 'PRE-ORDER NOW'}
                 </button>

@@ -2,6 +2,8 @@ import React from 'react';
 import ViewCountDownStart from './ViewCountDownStartIphone';
 import ViewCountDownEnd from './ViewCountDownEndIphone';
 import ItemIphone from './itemIphone';
+import ModalOffers from './modalOffers';
+import Accordion from 'react-bootstrap/Accordion';
 
 const PreOrderView = (props) => {
     const { buttonDisabled, handlePhoneSelection, setStartPreOrder, startPreOrder  } = props;
@@ -24,7 +26,7 @@ const PreOrderView = (props) => {
             <div className="preorder-offers__wrapper">
                 <div className="preorder-offers__title">
                     <h2>Our Offers. Only at Senheng</h2>
-                    <a href="https://senheng.com.my">LEARN MORE {">"}</a>
+                    <ModalOffers />
                 </div>
                 <div className="preorder-offers">
                     <div className="preorder-offers--items">
@@ -85,6 +87,7 @@ const PreOrderView = (props) => {
                             "m-1 ccircle pro-swatch-white-titanium",
                             "m-1 ccircle pro-swatch-black-titanium"
                         ]}
+                        urlIphone="apple-iphone-16-pro"
                     />
                     <ItemIphone
                         imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
@@ -99,6 +102,7 @@ const PreOrderView = (props) => {
                             "m-1 ccircle pro-swatch-white-titanium",
                             "m-1 ccircle pro-swatch-black-titanium"
                         ]}
+                        urlIphone="apple-iphone-16-pro-max"
                     />
                     <ItemIphone
                         imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
@@ -114,6 +118,7 @@ const PreOrderView = (props) => {
                             "m-1 ccircle regular-swatch-blue",
                             "m-1 ccircle regular-swatch-black"
                         ]}
+                        urlIphone="apple-iphone-16"
                     />
                     <ItemIphone
                         imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
@@ -129,6 +134,7 @@ const PreOrderView = (props) => {
                             "m-1 ccircle regular-swatch-blue",
                             "m-1 ccircle regular-swatch-black"
                         ]}
+                        urlIphone="apple-iphone-16-plus"
                     />
                 </div>
             </div>
@@ -149,16 +155,56 @@ const PreOrderView = (props) => {
 
             <div className="partnership">
                 <div className="partnership-item">
-                    <h2>Bank & Partnership Slider</h2>
+                    <img src="/assets/img/grab.webp" alt="grab" />
                 </div>
                 <div className="partnership-item">
-                    <h2>Trade-In get SCoin How to</h2>
+                    <img src="/assets/img/atome.webp" alt="grab" />
                 </div>
                 <div className="partnership-item">
-                    <h2>EPP</h2>
+                    <img src="/assets/img/aeon.webp" alt="grab" />
                 </div>
                 <div className="partnership-item">
-                    <h2>Offline S-Coin Redemption</h2>
+                    <img src="/assets/img/affin.webp" alt="grab" />
+                </div>
+            </div>
+
+            <div className="outlet">
+                <h2>Visit us at the nearest outlet.</h2>
+                <div className="outlet-title">
+                    <button>
+                        <a href="https://www.senheng.com.my/find-nearest-store" target="_blank">Locate us(Senheng)</a>
+                    </button>
+                    <button>
+                        <a href="https://www.senq.com.my/find-nearest-store" target="_blank">Locate us(senQ)</a>
+                    </button>
+                </div>
+                <div className="outlet-content">
+                    <Accordion defaultActiveKey="0">
+                        <Accordion.Item eventKey="0">
+                            <Accordion.Header>T&C</Accordion.Header>
+                            <Accordion.Body>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                            culpa qui officia deserunt mollit anim id est laborum.
+                            </Accordion.Body>
+                        </Accordion.Item>
+                        <Accordion.Item eventKey="1">
+                            <Accordion.Header>FAQ</Accordion.Header>
+                            <Accordion.Body>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                            culpa qui officia deserunt mollit anim id est laborum.
+                            </Accordion.Body>
+                        </Accordion.Item>
+                    </Accordion>
                 </div>
             </div>
             

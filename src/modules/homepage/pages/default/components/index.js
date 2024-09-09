@@ -8,6 +8,7 @@ import {
     apiCheckQueue,
     tokenApi
 } from '@config';
+import ModalOffers from './PreOrderIphone/modalOffers';
 
 let globalInterval = null;
 const Microsite = (props) => {
@@ -67,7 +68,7 @@ const Microsite = (props) => {
             <div className="preorder-offers__wrapper">
                 <div className="preorder-offers__title">
                     <h2>Our Offers. Only at Senheng</h2>
-                    <a href="https://senheng.com.my">LEARN MORE {">"}</a>
+                    <ModalOffers />
                 </div>
                 <div className="preorder-offers">
                     <div className="preorder-offers--items">

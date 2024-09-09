@@ -2,7 +2,6 @@ import '@/styles/globals.css'
 import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { endPoint, tokenHeader, GTM } from '@config';
-import TagManager from 'react-gtm-module';
 import React from 'react';
 
 const httpLink = createHttpLink({

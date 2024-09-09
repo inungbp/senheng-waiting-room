@@ -2,6 +2,7 @@ import React from 'react';
 import ViewCountDownStart from './ViewCountDownStartIphone';
 import ViewCountDownEnd from './ViewCountDownEndIphone';
 import ItemIphone from './itemIphone';
+import ModalOffers from './modalOffers';
 
 const PreOrderView = (props) => {
     const { buttonDisabled, handlePhoneSelection, setStartPreOrder, startPreOrder  } = props;
@@ -24,7 +25,7 @@ const PreOrderView = (props) => {
             <div className="preorder-offers__wrapper">
                 <div className="preorder-offers__title">
                     <h2>Our Offers. Only at Senheng</h2>
-                    <a href="https://senheng.com.my">LEARN MORE {">"}</a>
+                    <ModalOffers />
                 </div>
                 <div className="preorder-offers">
                     <div className="preorder-offers--items">
@@ -85,6 +86,7 @@ const PreOrderView = (props) => {
                             "m-1 ccircle pro-swatch-white-titanium",
                             "m-1 ccircle pro-swatch-black-titanium"
                         ]}
+                        urlIphone="apple-iphone-16-pro"
                     />
                     <ItemIphone
                         imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
@@ -99,6 +101,7 @@ const PreOrderView = (props) => {
                             "m-1 ccircle pro-swatch-white-titanium",
                             "m-1 ccircle pro-swatch-black-titanium"
                         ]}
+                        urlIphone="apple-iphone-16-pro-max"
                     />
                     <ItemIphone
                         imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
@@ -114,6 +117,7 @@ const PreOrderView = (props) => {
                             "m-1 ccircle regular-swatch-blue",
                             "m-1 ccircle regular-swatch-black"
                         ]}
+                        urlIphone="apple-iphone-16"
                     />
                     <ItemIphone
                         imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
@@ -129,6 +133,7 @@ const PreOrderView = (props) => {
                             "m-1 ccircle regular-swatch-blue",
                             "m-1 ccircle regular-swatch-black"
                         ]}
+                        urlIphone="apple-iphone-16-plus"
                     />
                 </div>
             </div>

@@ -83,7 +83,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: 'Poppins', sans-serif;
+  font-family: Poppins,Montserrat !important;
   scroll-behavior: smooth;
 }
 
@@ -142,13 +142,14 @@ a {
 }
 
 #pre-order {
-  max-width: 1440px;
+  max-width: 1320px;
   margin: 0 auto;
   padding-bottom: 128px;
 }
 
 .banner-content {
-  padding: 120px 64px;
+  padding: 120px 0;
+  margin: 0 auto;
 }
 
 .banner-content .banner-content__desc {
@@ -187,11 +188,13 @@ a {
   flex-direction: column;
   background-color: #FFFFFF;
   border-radius: 16px;
-  padding: 24px;
-  min-width: 350px;
+  padding: 20px;
+  min-width: 230px;
+  height: 270px;
+  white-space: normal;
 }
 .preorder-offers .preorder-offers--items img {
-  width: 100px;
+  width: 80px;
   height: auto;
   margin-bottom: 12px;
 }
@@ -200,11 +203,12 @@ a {
   margin: 2px 0;
   font-size: 16px;
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
+  font-weight: 500 !important;
 }
 .preorder-offers .preorder-offers--items p {
   color: #000000;
-  font-size: 16px;
+  font-size: 12px;
   text-align: left;
   font-weight: 400;
   margin: 0;
@@ -270,7 +274,7 @@ a {
 
 .choose-iphone {
   margin: 128px 0;
-  padding: 0 64px;
+  padding: 0;
 }
 
 .choose-iphone__wrapper {
@@ -287,6 +291,7 @@ a {
   border-radius: 16px;
   min-width: 350px;
   padding: 24px 40px;
+  white-space: normal;
 }
 
 .choose-iphone__wrapper .card-wrapper__desc button {
@@ -468,12 +473,44 @@ a {
   border: 1px solid rgba(0, 0, 0, 0.175);
   border-top: unset;
   padding: 20px;
+  text-align: left;
+  font-size: 16px;
+}
+.outlet .outlet-content .accordion .accordion-body ul li{
+  margin-left: 24px;
 }
 .outlet .outlet-content .accordion .accordion-item button {
   background-color: rgba(33,37,41, 0.03);
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.175);
   padding: 8px;
+}
+
+/*CUSTOMSCROLLBAR*/
+.custom-scrollbar {
+  max-width: 100%;
+  overflow-x: scroll;
+  white-space: nowrap; /* Ensure content doesn't wrap */
+  padding-bottom: 40px;
+}
+
+/* Customize scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #000; /* Scrollbar color */
+  /* border-radius: 10px; */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #C4C4C6; /* Track background color */
+}
+
+/* Hide scrollbar arrows */
+.custom-scrollbar::-webkit-scrollbar-button {
+  display: none;
 }
 
 @media (max-width: 1025px) {
@@ -497,6 +534,12 @@ a {
   .wrapper-countdown__content--img img {
     width: 100%;
   }
+  .banner-content .banner-content__desc {
+    margin-bottom: 40px;
+  }
+  .banner-content {
+    padding: 64px 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -505,14 +548,14 @@ a {
   }
   
   .banner-content {
-    gap: 40px;
-    padding: 64px 16px;
+    padding: 64px 0;
   }
   .banner-content__desc {
     order: 0;
   }
   .banner-content__image {
     order: 1;
+    padding: 0;
   }
 
   .preorder-offers__wrapper {
@@ -543,6 +586,10 @@ a {
   }
   .partnership-item h2 {
     font-size: 16px;
+  }
+
+  .choose-iphone {
+    padding: 0 40px;
   }
 
   .choose-iphone__wrapper .card-wrapper {
@@ -595,6 +642,9 @@ a {
   .outlet .outlet-content .accordion {
     flex-direction: column;
     gap: 20px;
+  }
+  .outlet .outlet-content .accordion .accordion-body {
+    font-size: 12px;
   }
   .outlet .outlet-content .accordion .accordion-item {
     width: 100%;

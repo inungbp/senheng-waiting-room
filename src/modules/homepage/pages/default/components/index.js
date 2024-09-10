@@ -54,7 +54,7 @@ const Microsite = (props) => {
             </div>
             <div className="row banner-content">
                 <div className="col-lg-8 banner-content__image">
-                    <img src="/assets/img/iphone16.webp" />
+                    <img src="/assets/img/banner-iphone16.webp" />
                 </div>
                 <div className="col-lg-4 banner-content__desc text-center">
                     <div>
@@ -70,7 +70,7 @@ const Microsite = (props) => {
                     <h2>Our Offers. Only at Senheng</h2>
                     <ModalOffers />
                 </div>
-                <div className="preorder-offers">
+                <div className="preorder-offers custom-scrollbar">
                     <div className="preorder-offers--items">
                         <img src="/assets/img/USP_1.webp" />
                         <h4 className='font-weight-bold'>Enjoy up to 3 years warranty</h4>

@@ -14,7 +14,7 @@ const ModalOffers = () => {
     return (
         <>
             <Button className="modal-offers__title" onClick={handleShow}>
-                Learn More {">"}
+                LEARN MORE {">"}
             </Button>
 
             <Modal

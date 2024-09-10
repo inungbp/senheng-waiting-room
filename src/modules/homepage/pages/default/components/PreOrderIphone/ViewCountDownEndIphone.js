@@ -15,19 +15,19 @@ const ViewCountDownEnd = () => {
             <div className="countdown-timer">
                 <div>
                     <p>{maskDays}</p>
-                    <p>Days</p>
+                    <p className="text">Days</p>
                 </div>
                 <div>
                     <p>{maskHours}</p>
-                    <p>Hours</p>
+                    <p className="text">Hours</p>
                 </div>
                 <div>
                     <p>{maskMinutes}</p>
-                    <p>Minutes</p>
+                    <p className="text">Minutes</p>
                 </div>
                 <div>
                     <p>{maskSeconds}</p>
-                    <p>Seconds</p>
+                    <p className="text">Seconds</p>
                 </div>
             </div>
         </>

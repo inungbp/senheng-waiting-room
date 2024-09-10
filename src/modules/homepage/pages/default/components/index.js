@@ -58,10 +58,11 @@ const Microsite = (props) => {
                 </div>
                 <div className="col-lg-4 banner-content__desc text-center">
                     <div>
-                        <h2 className='font-weight-bold'>Iphone 16</h2>
-                        <h2 className='font-weight-bold'>Name Mock</h2>
-                        <p>Pre-order and enjoy up to 3 years warranty* Pay 0% interest up to 60 months</p>
-                        <a href="https://senheng.com.my" target="_blank">SHOP NOW</a>
+                        <h5>Pre-order starts from</h5>
+                        <h3>13 Sept 2024,</h3>
+                        <h3>8:00 PM</h3>
+                        <p>Available from 20 Sept 2024 onwards</p>
+                        <a href="#choose-iphone">SHOP NOW</a>
                     </div>
                 </div>
             </div>

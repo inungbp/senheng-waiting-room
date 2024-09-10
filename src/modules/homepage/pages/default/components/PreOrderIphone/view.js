@@ -81,7 +81,7 @@ const PreOrderView = (props) => {
                             <h2 className="font-weight-bold mb-5 heading-title">Choose your iPhone.</h2>
                             <div className="choose-iphone__wrapper custom-scrollbar">
                                 <ItemIphone
-                                    imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
+                                    imageUrl="/assets/img/iPhone_16_Pro.webp"
                                     handlePhoneSelection={handlePhoneSelection}
                                     buttonDisabled={buttonDisabled}
                                     title="iPhone 16 Pro"
@@ -96,7 +96,7 @@ const PreOrderView = (props) => {
                                     urlIphone="apple-iphone-16-pro"
                                 />
                                 <ItemIphone
-                                    imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
+                                    imageUrl="/assets/img/iPhone_16_Pro_Max.webp"
                                     handlePhoneSelection={handlePhoneSelection}
                                     buttonDisabled={buttonDisabled}
                                     title="iPhone 16 Pro Max"
@@ -111,7 +111,7 @@ const PreOrderView = (props) => {
                                     urlIphone="apple-iphone-16-pro-max"
                                 />
                                 <ItemIphone
-                                    imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
+                                    imageUrl="/assets/img/iPhone_16.webp"
                                     handlePhoneSelection={handlePhoneSelection}
                                     buttonDisabled={buttonDisabled}
                                     title="iPhone 16"
@@ -127,7 +127,7 @@ const PreOrderView = (props) => {
                                     urlIphone="apple-iphone-16"
                                 />
                                 <ItemIphone
-                                    imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
+                                    imageUrl="/assets/img/iPhone_16_Plus.webp"
                                     handlePhoneSelection={handlePhoneSelection}
                                     buttonDisabled={buttonDisabled}
                                     title="iPhone 16 Plus"
@@ -154,7 +154,7 @@ const PreOrderView = (props) => {
                                     </div>
                                 </div>
                                 <div className="col-lg-8 banner-content__image">
-                                    <img src="/assets/img/banner-iphone16.webp" />
+                                    <img src="/assets/img/compare_iphone_models.webp" />
                                 </div>
                             </div>
                         </div>

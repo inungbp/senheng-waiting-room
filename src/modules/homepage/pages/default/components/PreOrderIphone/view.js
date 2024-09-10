@@ -20,7 +20,9 @@ const PreOrderView = (props) => {
                         <h3>13 Sept 2024,</h3>
                         <h3>8:00 PM</h3>
                         <p>Available from 20 Sept 2024 onwards</p>
-                        <a href="#choose-iphone">SHOP NOW</a>
+                        {startPreOrder && (
+                            <a href="#choose-iphone">SHOP NOW</a>
+                        )}
                     </div>
                 </div>
             </div>
@@ -72,87 +74,93 @@ const PreOrderView = (props) => {
                 }
                 
             </div>
-            <div className="choose-iphone" id="choose-iphone">
-                <h2 className="font-weight-bold mb-5 heading-title">Choose your iPhone.</h2>
-                <div className="choose-iphone__wrapper custom-scrollbar">
-                    <ItemIphone
-                        imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
-                        handlePhoneSelection={handlePhoneSelection}
-                        buttonDisabled={buttonDisabled}
-                        title="iPhone 16 Pro"
-                        price="from RM5499"
-                        memory="128GB | 256GB | 512GB | 1TB"
-                        color={[
-                            "m-1 ccircle pro-swatch-natural-titanium",
-                            "m-1 ccircle pro-swatch-blue-titanium",
-                            "m-1 ccircle pro-swatch-white-titanium",
-                            "m-1 ccircle pro-swatch-black-titanium"
-                        ]}
-                        urlIphone="apple-iphone-16-pro"
-                    />
-                    <ItemIphone
-                        imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
-                        handlePhoneSelection={handlePhoneSelection}
-                        buttonDisabled={buttonDisabled}
-                        title="iPhone 16 Pro Max"
-                        price="from RM6499"
-                        memory="256GB | 512GB | 1TB"
-                        color={[
-                            "m-1 ccircle pro-swatch-natural-titanium",
-                            "m-1 ccircle pro-swatch-blue-titanium",
-                            "m-1 ccircle pro-swatch-white-titanium",
-                            "m-1 ccircle pro-swatch-black-titanium"
-                        ]}
-                        urlIphone="apple-iphone-16-pro-max"
-                    />
-                    <ItemIphone
-                        imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
-                        handlePhoneSelection={handlePhoneSelection}
-                        buttonDisabled={buttonDisabled}
-                        title="iPhone 16"
-                        price="from RM4399"
-                        memory="128GB | 256GB | 512GB"
-                        color={[
-                            "m-1 ccircle regular-swatch-pink",
-                            "m-1 ccircle regular-swatch-yellow",
-                            "m-1 ccircle regular-swatch-green",
-                            "m-1 ccircle regular-swatch-blue",
-                            "m-1 ccircle regular-swatch-black"
-                        ]}
-                        urlIphone="apple-iphone-16"
-                    />
-                    <ItemIphone
-                        imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
-                        handlePhoneSelection={handlePhoneSelection}
-                        buttonDisabled={buttonDisabled}
-                        title="iPhone 16 Plus"
-                        price="from RM4899"
-                        memory="128GB | 256GB | 512GB"
-                        color={[
-                            "m-1 ccircle regular-swatch-pink",
-                            "m-1 ccircle regular-swatch-yellow",
-                            "m-1 ccircle regular-swatch-green",
-                            "m-1 ccircle regular-swatch-blue",
-                            "m-1 ccircle regular-swatch-black"
-                        ]}
-                        urlIphone="apple-iphone-16-plus"
-                    />
-                </div>
-            </div>
-            <div className="compare-models">
-                <div className="row banner-content">
-                    <div className="col-lg-4 banner-content__desc">
-                        <div>
-                            <h2 className='font-weight-bold'>Compare Models</h2>
-                            <p>Explore the differences between iPhone models to find the one that suits your needs</p>
-                            <a href="https://senheng.com.my" target="_blank">COMPARE iPHONE {">"}</a>
+            {
+                startPreOrder && (
+                    <>
+                        <div className="choose-iphone" id="choose-iphone">
+                            <h2 className="font-weight-bold mb-5 heading-title">Choose your iPhone.</h2>
+                            <div className="choose-iphone__wrapper custom-scrollbar">
+                                <ItemIphone
+                                    imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
+                                    handlePhoneSelection={handlePhoneSelection}
+                                    buttonDisabled={buttonDisabled}
+                                    title="iPhone 16 Pro"
+                                    price="from RM5499"
+                                    memory="128GB | 256GB | 512GB | 1TB"
+                                    color={[
+                                        "m-1 ccircle pro-swatch-natural-titanium",
+                                        "m-1 ccircle pro-swatch-blue-titanium",
+                                        "m-1 ccircle pro-swatch-white-titanium",
+                                        "m-1 ccircle pro-swatch-black-titanium"
+                                    ]}
+                                    urlIphone="apple-iphone-16-pro"
+                                />
+                                <ItemIphone
+                                    imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
+                                    handlePhoneSelection={handlePhoneSelection}
+                                    buttonDisabled={buttonDisabled}
+                                    title="iPhone 16 Pro Max"
+                                    price="from RM6499"
+                                    memory="256GB | 512GB | 1TB"
+                                    color={[
+                                        "m-1 ccircle pro-swatch-natural-titanium",
+                                        "m-1 ccircle pro-swatch-blue-titanium",
+                                        "m-1 ccircle pro-swatch-white-titanium",
+                                        "m-1 ccircle pro-swatch-black-titanium"
+                                    ]}
+                                    urlIphone="apple-iphone-16-pro-max"
+                                />
+                                <ItemIphone
+                                    imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
+                                    handlePhoneSelection={handlePhoneSelection}
+                                    buttonDisabled={buttonDisabled}
+                                    title="iPhone 16"
+                                    price="from RM4399"
+                                    memory="128GB | 256GB | 512GB"
+                                    color={[
+                                        "m-1 ccircle regular-swatch-pink",
+                                        "m-1 ccircle regular-swatch-yellow",
+                                        "m-1 ccircle regular-swatch-green",
+                                        "m-1 ccircle regular-swatch-blue",
+                                        "m-1 ccircle regular-swatch-black"
+                                    ]}
+                                    urlIphone="apple-iphone-16"
+                                />
+                                <ItemIphone
+                                    imageUrl="https://magento.senheng.com.my/media/wysiwyg/m2_images/m2_cat/brand-banner/apple/iphone15-pro/header_iphone_15_pro_max_tigry_large_2x.png"
+                                    handlePhoneSelection={handlePhoneSelection}
+                                    buttonDisabled={buttonDisabled}
+                                    title="iPhone 16 Plus"
+                                    price="from RM4899"
+                                    memory="128GB | 256GB | 512GB"
+                                    color={[
+                                        "m-1 ccircle regular-swatch-pink",
+                                        "m-1 ccircle regular-swatch-yellow",
+                                        "m-1 ccircle regular-swatch-green",
+                                        "m-1 ccircle regular-swatch-blue",
+                                        "m-1 ccircle regular-swatch-black"
+                                    ]}
+                                    urlIphone="apple-iphone-16-plus"
+                                />
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-lg-8 banner-content__image">
-                        <img src="/assets/img/banner-iphone16.webp" />
-                    </div>
-                </div>
-            </div>
+                        <div className="compare-models">
+                            <div className="row banner-content">
+                                <div className="col-lg-4 banner-content__desc">
+                                    <div>
+                                        <h2 className='font-weight-bold'>Compare Models</h2>
+                                        <p>Explore the differences between iPhone models to find the one that suits your needs</p>
+                                        <a href="https://senheng.com.my" target="_blank">COMPARE iPHONE {">"}</a>
+                                    </div>
+                                </div>
+                                <div className="col-lg-8 banner-content__image">
+                                    <img src="/assets/img/banner-iphone16.webp" />
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                )
+            }
 
             <div className="partnership">
                 <div className="partnership-item">

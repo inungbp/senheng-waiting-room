@@ -1,8 +1,11 @@
 import useCountDown from '../../../../../helper/countdown';
 
 const ViewCountDownEnd = () => {
+    const startDate = new Date();
+    const endDate = new Date('September 19, 2024 23:59:59');
+    const endPreoder = (endDate - startDate) / 1000;
     const { maskDays, maskHours, maskMinutes, maskSeconds } = useCountDown({
-        time: 3600,
+        time: Math.trunc(endPreoder),
         validation: true,
         onTimesUp: () => { console.log(); },
     })

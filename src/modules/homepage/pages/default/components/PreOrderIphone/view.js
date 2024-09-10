@@ -10,14 +10,14 @@ const PreOrderView = (props) => {
 
     return (
         <div className="container" id="pre-order">
-            <div className="row banner-content container">
+            <div className="row banner-content">
                 <div className="col-lg-8 banner-content__image">
                     <img src="/assets/img/banner-iphone16.webp" />
                 </div>
                 <div className="col-lg-4 banner-content__desc text-center">
                     <div>
-                        <h5>Pre-order starts from</h5>
-                        <h3>13 Sept 2024,</h3>
+                        <h5>Pre-order starts on</h5>
+                        <h3>13 September 2024,</h3>
                         <h3>8:00 PM</h3>
                         <p>Available from 20 Sept 2024 onwards</p>
                         {startPreOrder && (
@@ -85,7 +85,7 @@ const PreOrderView = (props) => {
                                     handlePhoneSelection={handlePhoneSelection}
                                     buttonDisabled={buttonDisabled}
                                     title="iPhone 16 Pro"
-                                    price="from RM5499"
+                                    price="from RM 4999"
                                     memory="128GB | 256GB | 512GB | 1TB"
                                     color={[
                                         "m-1 ccircle pro-swatch-natural-titanium",
@@ -100,7 +100,7 @@ const PreOrderView = (props) => {
                                     handlePhoneSelection={handlePhoneSelection}
                                     buttonDisabled={buttonDisabled}
                                     title="iPhone 16 Pro Max"
-                                    price="from RM6499"
+                                    price="from RM 5999"
                                     memory="256GB | 512GB | 1TB"
                                     color={[
                                         "m-1 ccircle pro-swatch-natural-titanium",
@@ -115,7 +115,7 @@ const PreOrderView = (props) => {
                                     handlePhoneSelection={handlePhoneSelection}
                                     buttonDisabled={buttonDisabled}
                                     title="iPhone 16"
-                                    price="from RM4399"
+                                    price="from RM 3999"
                                     memory="128GB | 256GB | 512GB"
                                     color={[
                                         "m-1 ccircle regular-swatch-pink",
@@ -131,7 +131,7 @@ const PreOrderView = (props) => {
                                     handlePhoneSelection={handlePhoneSelection}
                                     buttonDisabled={buttonDisabled}
                                     title="iPhone 16 Plus"
-                                    price="from RM4899"
+                                    price="from RM 4499"
                                     memory="128GB | 256GB | 512GB"
                                     color={[
                                         "m-1 ccircle regular-swatch-pink",
@@ -150,7 +150,7 @@ const PreOrderView = (props) => {
                                     <div>
                                         <h2 className='font-weight-bold'>Compare Models</h2>
                                         <p>Explore the differences between iPhone models to find the one that suits your needs</p>
-                                        <a href="https://senheng.com.my" target="_blank">COMPARE iPHONE {">"}</a>
+                                        <a href="https://www.senheng.com.my/iphone-comparison-learn-more" target="_blank">COMPARE iPHONE {">"}</a>
                                     </div>
                                 </div>
                                 <div className="col-lg-8 banner-content__image">
@@ -163,26 +163,29 @@ const PreOrderView = (props) => {
             }
 
             <div className="partnership">
-                <div className="partnership-item">
-                    <img src="/assets/img/grab.webp" alt="grab" />
-                </div>
-                <div className="partnership-item">
-                    <img src="/assets/img/atome.webp" alt="grab" />
-                </div>
-                <div className="partnership-item">
-                    <img src="/assets/img/spay.webp" alt="grab" />
-                </div>
-                <div className="partnership-item">
-                    <img src="/assets/img/maybank.webp" alt="grab" />
-                </div>
-                <div className="partnership-item">
-                    <img src="/assets/img/uob.webp" alt="grab" />
-                </div>
-                <div className="partnership-item">
-                    <img src="/assets/img/affin.webp" alt="grab" />
-                </div>
-                <div className="partnership-item">
-                    <img src="/assets/img/aeon.webp" alt="grab" />
+                <h2 class="mb-5">More Offers</h2>
+                <div className="partnership-wrapper">
+                    <div className="partnership-item">
+                        <img src="/assets/img/grab.webp" alt="grab" />
+                    </div>
+                    <div className="partnership-item">
+                        <img src="/assets/img/atome.webp" alt="grab" />
+                    </div>
+                    <div className="partnership-item">
+                        <img src="/assets/img/spay.webp" alt="grab" />
+                    </div>
+                    <div className="partnership-item">
+                        <img src="/assets/img/maybank.webp" alt="grab" />
+                    </div>
+                    <div className="partnership-item">
+                        <img src="/assets/img/uob.webp" alt="grab" />
+                    </div>
+                    <div className="partnership-item">
+                        <img src="/assets/img/affin.webp" alt="grab" />
+                    </div>
+                    <div className="partnership-item">
+                        <img src="/assets/img/aeon.webp" alt="grab" />
+                    </div>
                 </div>
             </div>
 
@@ -197,7 +200,7 @@ const PreOrderView = (props) => {
                     </button>
                 </div>
                 <div className="outlet-content">
-                    <Accordion defaultActiveKey="0">
+                    <Accordion>
                         <Accordion.Item eventKey="0">
                             <Accordion.Header>T&C</Accordion.Header>
                             <Accordion.Body>

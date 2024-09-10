@@ -40,10 +40,10 @@ const useCountDown = ({ time = 0, validation, onTimesUp }) => {
     const seconds = remainSeconds % 60;
 
     return {
-        maskDays: days < 10 ? `0${days}` : days.toString(),
-        maskHours: hours < 10 ? `0${hours}` : hours.toString(),
-        maskMinutes: minutes < 10 ? `0${minutes}` : minutes.toString(),
-        maskSeconds: seconds < 10 ? `0${seconds}` : seconds.toString(),
+        maskDays: days < 10 ? `${days}` : days.toString(),
+        maskHours: hours < 10 ? `${hours}` : hours.toString(),
+        maskMinutes: minutes < 10 ? `${minutes}` : minutes.toString(),
+        maskSeconds: seconds < 10 ? `${seconds}` : seconds.toString(),
     }
 };
 

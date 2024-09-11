@@ -156,10 +156,11 @@ a {
   max-width: 1320px;
 }
 .banner-content a {
-  color: #000000;
+  color: #007bff;
   font-size: 20px;
   font-weight: 600;
   cursor: pointer;
+  text-decoration: underline;
 }
 .banner-content h3 {
   margin-bottom: 0;
@@ -243,6 +244,7 @@ a {
   color: #007bff;
   font-weight: 500;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .compare-models .banner-content {
@@ -255,7 +257,7 @@ a {
   padding: 0;
 }
 .compare-models .banner-content img {
-  max-width: 500px;
+  max-width: 400px;
   width: 100%;
 }
 .compare-models .banner-content__image {
@@ -359,8 +361,14 @@ a {
 .choose-iphone__wrapper .card-wrapper__desc h5 {
   font-weight: 500 !important;
 }
+.choose-iphone__wrapper .card-wrapper__image {
+  min-height: 122px;
+}
 .choose-iphone__wrapper .card-wrapper__image img {
   width: 100px;
+}
+.choose-iphone__wrapper .card-wrapper__desc .desc {
+  font-size: small;
 }
 
 /* color */
@@ -685,6 +693,12 @@ a {
     margin-bottom: 12px !important;
     font-size: 16px;
   }
+  .choose-iphone__wrapper .card-wrapper__desc {
+    padding-top: 0;
+  }
+  .choose-iphone__wrapper .card-wrapper .card-wrapper__desc .desc {
+    font-size: x-small;
+  }
   .choose-iphone__wrapper .card-wrapper .card-wrapper__desc p {
     font-size: 12px;
   }
@@ -696,7 +710,7 @@ a {
     height: 12px;
   }
   .choose-iphone__wrapper .card-wrapper .card-wrapper__desc .dialog-button {
-    margin: 0;
+    margin-top: 12px;
     font-size: 12px;
   }
 
@@ -735,13 +749,21 @@ a {
   .outlet .outlet-content .accordion .accordion-item {
     width: 100%;
   }
+  .compare-models .banner-content__desc {
+    width: 50%;
+    order: 0;
+  }
+  .compare-models .banner-content__desc p {
+    font-size: 14px;
+  }
   .compare-models .banner-content img {
-    max-width: 300px;
+    max-width: 200px;
     width: 100%;
   }
   .compare-models .banner-content .banner-content__image{
     text-align: center;
-    margin: 0 auto;
+    width: 50%;
+    order: 1;
   }
   .countdown-timer {
     max-width: 80%;
@@ -755,7 +777,7 @@ a {
   }
   .compare-models .banner-content {
     padding: 20px 40px;
-    gap: 40px;
+    flex-direction: row;
   }
 }
 
@@ -841,6 +863,9 @@ a {
   .choose-iphone__wrapper .card-parent {
     text-align: center;
   }
+  .choose-iphone__wrapper .card-wrapper__image {
+    min-height: 100px;
+  }
 
   .choose-iphone__wrapper .card-parent .color-picker {
     justify-content: center;
@@ -898,5 +923,21 @@ a {
   }
   .compare-models .banner-content {
     padding: 20px;
+    flex-direction: column;
+  }
+  .compare-models .banner-content .banner-content__desc {
+    order: 1;
+    width: 100%;
+    text-align: center;
+  }
+  .compare-models .banner-content .banner-content__desc p {
+    font-size: 12px;
+  }
+  .compare-models .banner-content .banner-content__image {
+    order: 0;
+    width: 100%;
+  }
+  .compare-models .banner-content .banner-content__image img {
+    width: 150px;
   }
 }

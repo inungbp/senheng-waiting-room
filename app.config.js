@@ -1,4 +1,4 @@
-const storeCode = 'senq_malay_en_US';
+const storeCode = 'senheng_malay_en_US';
 const intervalCheckStatus = 60000;
 const CMSPageInterest = 'https://senheng-upgrade-pwa.testingnow.me/iphone15-register-of-interest';
 const tokenHeader = 'inwyzt1j98qbg4l130v1iambkhjv1n40';

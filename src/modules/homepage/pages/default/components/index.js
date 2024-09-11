@@ -48,7 +48,16 @@ const Microsite = (props) => {
                         </div>
                     </div>
                     <div className="wrapper-countdown__content--img">
-                        <img src="/assets/img/banner-iphone.png" />
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/GDlkCkcIqTs?si=-wdI59wZ8XhwIS1q"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                        />
                     </div>
                 </div>
             </div>

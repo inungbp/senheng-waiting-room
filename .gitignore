@@ -11,3 +11,6 @@
 /node_modules
 /.pnp
 .pnp.js
+
+#File
+app.config.js

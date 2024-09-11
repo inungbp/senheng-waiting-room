@@ -16,12 +16,11 @@ const PreOrderView = (props) => {
                 </div>
                 <div className="col-lg-4 banner-content__desc text-center">
                     <div>
-                        <h5>Pre-order starts on</h5>
-                        <h3>13 September 2024,</h3>
-                        <h3>8:00 PM</h3>
+                        <h5>Enjoy up to 3 years warranty & Free Shipping.</h5>
+                        <h5>Pay 0% interest up to 60 months</h5>
                         <p>Available from 20 Sept 2024 onwards</p>
                         {startPreOrder && (
-                            <a href="#choose-iphone">SHOP NOW</a>
+                            <a href="#choose-iphone">PRE-ORDER NOW</a>
                         )}
                     </div>
                 </div>
@@ -81,21 +80,6 @@ const PreOrderView = (props) => {
                             <h2 className="font-weight-bold mb-5 heading-title">Choose your iPhone.</h2>
                             <div className="choose-iphone__wrapper custom-scrollbar">
                                 <ItemIphone
-                                    imageUrl="/assets/img/iPhone_16_Pro.webp"
-                                    handlePhoneSelection={handlePhoneSelection}
-                                    buttonDisabled={buttonDisabled}
-                                    title="iPhone 16 Pro"
-                                    price="from RM 4999"
-                                    memory="128GB | 256GB | 512GB | 1TB"
-                                    color={[
-                                        "m-1 ccircle pro-swatch-natural-titanium",
-                                        "m-1 ccircle pro-swatch-blue-titanium",
-                                        "m-1 ccircle pro-swatch-white-titanium",
-                                        "m-1 ccircle pro-swatch-black-titanium"
-                                    ]}
-                                    urlIphone="apple-iphone-16-pro"
-                                />
-                                <ItemIphone
                                     imageUrl="/assets/img/iPhone_16_Pro_Max.webp"
                                     handlePhoneSelection={handlePhoneSelection}
                                     buttonDisabled={buttonDisabled}
@@ -103,28 +87,27 @@ const PreOrderView = (props) => {
                                     price="from RM 5999"
                                     memory="256GB | 512GB | 1TB"
                                     color={[
-                                        "m-1 ccircle pro-swatch-natural-titanium",
-                                        "m-1 ccircle pro-swatch-blue-titanium",
-                                        "m-1 ccircle pro-swatch-white-titanium",
-                                        "m-1 ccircle pro-swatch-black-titanium"
+                                        "m-1 ccircle desert-titanium",
+                                        "m-1 ccircle natural-titanium",
+                                        "m-1 ccircle white-titanium",
+                                        "m-1 ccircle black-titanium"
                                     ]}
                                     urlIphone="apple-iphone-16-pro-max"
                                 />
                                 <ItemIphone
-                                    imageUrl="/assets/img/iPhone_16.webp"
+                                    imageUrl="/assets/img/iPhone_16_Pro.webp"
                                     handlePhoneSelection={handlePhoneSelection}
                                     buttonDisabled={buttonDisabled}
-                                    title="iPhone 16"
-                                    price="from RM 3999"
-                                    memory="128GB | 256GB | 512GB"
+                                    title="iPhone 16 Pro"
+                                    price="from RM 4999"
+                                    memory="128GB | 256GB | 512GB | 1TB"
                                     color={[
-                                        "m-1 ccircle regular-swatch-pink",
-                                        "m-1 ccircle regular-swatch-yellow",
-                                        "m-1 ccircle regular-swatch-green",
-                                        "m-1 ccircle regular-swatch-blue",
-                                        "m-1 ccircle regular-swatch-black"
+                                        "m-1 ccircle desert-titanium",
+                                        "m-1 ccircle natural-titanium",
+                                        "m-1 ccircle white-titanium",
+                                        "m-1 ccircle black-titanium"
                                     ]}
-                                    urlIphone="apple-iphone-16"
+                                    urlIphone="apple-iphone-16-pro"
                                 />
                                 <ItemIphone
                                     imageUrl="/assets/img/iPhone_16_Plus.webp"
@@ -134,13 +117,29 @@ const PreOrderView = (props) => {
                                     price="from RM 4499"
                                     memory="128GB | 256GB | 512GB"
                                     color={[
-                                        "m-1 ccircle regular-swatch-pink",
-                                        "m-1 ccircle regular-swatch-yellow",
-                                        "m-1 ccircle regular-swatch-green",
-                                        "m-1 ccircle regular-swatch-blue",
-                                        "m-1 ccircle regular-swatch-black"
+                                        "m-1 ccircle ultramarine",
+                                        "m-1 ccircle teal",
+                                        "m-1 ccircle pink",
+                                        "m-1 ccircle white",
+                                        "m-1 ccircle black"
                                     ]}
                                     urlIphone="apple-iphone-16-plus"
+                                />
+                                <ItemIphone
+                                    imageUrl="/assets/img/iPhone_16.webp"
+                                    handlePhoneSelection={handlePhoneSelection}
+                                    buttonDisabled={buttonDisabled}
+                                    title="iPhone 16"
+                                    price="from RM 3999"
+                                    memory="128GB | 256GB | 512GB"
+                                    color={[
+                                        "m-1 ccircle ultramarine",
+                                        "m-1 ccircle teal",
+                                        "m-1 ccircle pink",
+                                        "m-1 ccircle white",
+                                        "m-1 ccircle black"
+                                    ]}
+                                    urlIphone="apple-iphone-16"
                                 />
                             </div>
                         </div>
@@ -193,10 +192,10 @@ const PreOrderView = (props) => {
                 <h2>Visit us at the nearest outlet.</h2>
                 <div className="outlet-title">
                     <button>
-                        <a href="https://www.senheng.com.my/find-nearest-store" target="_blank">Locate us(Senheng)</a>
+                        <a href="https://www.senheng.com.my/find-nearest-store" target="_blank">Locate us | Senheng</a>
                     </button>
                     <button>
-                        <a href="https://www.senq.com.my/find-nearest-store" target="_blank">Locate us(senQ)</a>
+                        <a href="https://www.senq.com.my/find-nearest-store" target="_blank">Locate us | senQ</a>
                     </button>
                 </div>
                 <div className="outlet-content">

@@ -14,7 +14,7 @@ const ModalOffers = () => {
     return (
         <>
             <Button className="modal-offers__title" onClick={handleShow}>
-                LEARN MORE {">"}
+                LEARN MORE
             </Button>
 
             <Modal
@@ -36,7 +36,7 @@ const ModalOffers = () => {
                     <Tab eventKey="content1" title="Enjoy up to 3 years warranty">
                         Up to 3 Year warranty* for valid and paid PlusOne members
                     </Tab>
-                    <Tab eventKey="content2" title="0% EPP 60 months in store exclusive">
+                    <Tab eventKey="content2" title="0% EPP up to 60 months in store exclusive">
                         <img src="https://magento.senheng.com.my/media/pdf/shsq/Aug-2024-offline-payment-plan.jpg" alt="epp-exclusive" />
                     </Tab>
                     <Tab eventKey="content3" title="0% EPP up to 60 months for online">
@@ -53,10 +53,10 @@ const ModalOffers = () => {
                     </Tab>
                     <Tab eventKey="content5" title="Trade Up and Save More">
                         <p>Trade-Up</p>    
-                        <p>get additional rebate up to RM1,100* upon purchase.</p>
+                        <p>get additional rebate up to RM500* upon purchase.</p>
                         <div className="learn-more">
                             <button>
-                                <a href="https://www.senheng.com.my/trade-in-rebate" targer="_blank">Learn More</a>
+                                <a href="https://magento.senheng.com.my/media/pdf/shsq/iPhone-Trade-Up-list-for-New.pdf" target="_blank">Learn More</a>
                             </button>
                         </div>
                     </Tab>

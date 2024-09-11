@@ -58,11 +58,10 @@ const Microsite = (props) => {
                 </div>
                 <div className="col-lg-4 banner-content__desc text-center">
                     <div>
-                        <h5>Pre-order starts from</h5>
-                        <h3>13 Sept 2024,</h3>
-                        <h3>8:00 PM</h3>
+                        <h5>Enjoy up to 3 years warranty & Free Shipping.</h5>
+                        <h5>Pay 0% interest up to 60 months</h5>
                         <p>Available from 20 Sept 2024 onwards</p>
-                        <a href="#choose-iphone">SHOP NOW</a>
+                        <a href="#choose-iphone">PRE-ORDER NOW</a>
                     </div>
                 </div>
             </div>

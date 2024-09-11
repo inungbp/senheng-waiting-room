@@ -567,6 +567,14 @@ a {
 .custom-scrollbar::-webkit-scrollbar-button {
   display: none;
 }
+.main-logo {
+  text-align: center;
+  padding: 20px;
+}
+.main-logo img {
+  max-width: 200px;
+  height: auto;
+}
 
 @media (max-width: 1025px) {
   .partnership-item {

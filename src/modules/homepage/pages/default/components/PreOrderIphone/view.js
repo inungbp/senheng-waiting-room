@@ -4,12 +4,16 @@ import ViewCountDownEnd from './ViewCountDownEndIphone';
 import ItemIphone from './itemIphone';
 import ModalOffers from './modalOffers';
 import Accordion from 'react-bootstrap/Accordion';
+import { storeCode } from '@config';
 
 const PreOrderView = (props) => {
     const { buttonDisabled, handlePhoneSelection, setStartPreOrder, startPreOrder  } = props;
 
     return (
         <div className="container" id="pre-order">
+            <div className="main-logo">
+                <img src={storeCode === "senheng_malay_en_US" ? "/assets/img/senheng_logo.webp" : "/assets/img/senq_logo.webp"} />
+            </div>
             <div className="row banner-content">
                 <div className="col-lg-8 banner-content__image">
                     <img src="/assets/img/banner-iphone16.webp" />

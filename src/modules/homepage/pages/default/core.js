@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Component from './components'
 import dynamic from 'next/dynamic'
 import TagManager from 'react-gtm-module';
-import { GTM } from '@config';
+import { GTMSenheng, GTMSenq, storeCode } from '@config';
 
 const Microsite = () => {
     const PreOrderIphone = dynamic(() => import('./components/PreOrderIphone'), { ssr: false });
@@ -16,24 +16,26 @@ const Microsite = () => {
     // GTM & GA
     const tagManagerArgs = {
         gtmId:
-            typeof publicRuntimeConfig !== 'undefined' && GTM.gtmId[publicRuntimeConfig.appEnv]
-                ? GTM.gtmId[publicRuntimeConfig.appEnv]
-                : GTM.gtmId,
+            typeof publicRuntimeConfig !== 'undefined' && GTMSenheng.gtmId[publicRuntimeConfig.appEnv]
+                ? storeCode === 'senheng_malay_en_US' 
+                    ? GTMSenheng.gtmId[publicRuntimeConfig.appEnv]
+                    : GTMSenq.gtmId[publicRuntimeConfig.appEnv]
+                : storeCode === 'senheng_malay_en_US' ? GTMSenheng.gtmId : GTMSenq.gtmId,
     };
 
     React.useEffect(() => {
-        if (GTM.enable) {
+        if (GTMSenheng.enable) {
             TagManager.initialize(tagManagerArgs);
             TagManager.dataLayer({
                 dataLayer: {
-                    pageName: 'senheng-waiting-room',
+                    pageName: storeCode === 'senheng_malay_en_US' ? 'senheng-waiting-room' : 'senq-waiting-room',
                     pageType: 'homepage',
                     event: 'page_view_waiting_room',
-                    page_view_home: 'senheng-waiting-room',
+                    page_view_home: storeCode === 'senheng_malay_en_US' ? 'senheng-waiting-room' : 'senq-waiting-room',
                 },
             });
         };
-    }, [GTM]);
+    }, [GTMSenheng]);
 
     if (!router.query.key && !router.query.position) {
         return (

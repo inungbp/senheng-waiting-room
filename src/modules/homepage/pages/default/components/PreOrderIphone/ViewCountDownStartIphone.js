@@ -13,7 +13,7 @@ const ViewCountDownStart = (props) => {
 
     return (
         <>
-            <h2>Pre-Order start in</h2>
+            <h2>Pre-Order Starts In</h2>
             <div className="countdown-timer">
                 <div>
                     <p>{maskDays}</p>

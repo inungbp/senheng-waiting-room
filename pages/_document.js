@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import { GTMSenheng, GTMSenq, storeCode } from "@config";
 
 export default function Document() {
   return (
@@ -15,14 +16,14 @@ export default function Document() {
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
                 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                })(window,document,'script','dataLayer','GTM-P2J3ZCPB');`,
+                })(window,document,'script','dataLayer', ${storeCode === 'senheng_malay_en_US' ? GTMSenheng : GTMSenq});`,
                 }}
             />
         </Head>
         <body>
             <noscript>
                 <iframe
-                    src="https://www.googletagmanager.com/ns.html?id=GTM-P2J3ZCPB"
+                    src={`https://www.googletagmanager.com/ns.html?id=${storeCode === 'senheng_malay_en_US' ? GTMSenheng : GTMSenq}`}
                     height="0"
                     width="0"
                     style={{display: "none", visibility: "hidden"}} />

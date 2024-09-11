@@ -4,7 +4,7 @@ import ViewCountDownEnd from './ViewCountDownEndIphone';
 import ItemIphone from './itemIphone';
 import ModalOffers from './modalOffers';
 import Accordion from 'react-bootstrap/Accordion';
-import { storeCode } from '@config';
+import { storeCode, urlIphone16 } from '@config';
 
 const PreOrderView = (props) => {
     const { buttonDisabled, handlePhoneSelection, setStartPreOrder, startPreOrder  } = props;
@@ -12,7 +12,9 @@ const PreOrderView = (props) => {
     return (
         <div className="container" id="pre-order">
             <div className="main-logo">
-                <img src={storeCode === "senheng_malay_en_US" ? "/assets/img/senheng_logo.webp" : "/assets/img/senq_logo.webp"} />
+                <a href={`https://${storeCode === "senheng_malay_en_US" ? "senheng" : "senq"}.com.my`} target="_blank">
+                    <img src={storeCode === "senheng_malay_en_US" ? "/assets/img/senheng_logo.webp" : "/assets/img/senq_logo.webp"} />
+                </a>
             </div>
             <div className="row banner-content">
                 <div className="col-lg-8 banner-content__image">
@@ -31,7 +33,7 @@ const PreOrderView = (props) => {
             </div>
             <div className="preorder-offers__wrapper">
                 <div className="preorder-offers__title">
-                    <h2>Our Offers. Only at Senheng</h2>
+                    <h2>Our Offers. Only at {storeCode === "senheng_malay_en_US" ? "Senheng" : "senQ"}</h2>
                     <ModalOffers />
                 </div>
                 <div className="preorder-offers custom-scrollbar">
@@ -88,7 +90,7 @@ const PreOrderView = (props) => {
                                     handlePhoneSelection={handlePhoneSelection}
                                     buttonDisabled={buttonDisabled}
                                     title="iPhone 16 Pro Max"
-                                    price="from RM 5999"
+                                    price="From RM5,999"
                                     memory="256GB | 512GB | 1TB"
                                     color={[
                                         "m-1 ccircle desert-titanium",
@@ -96,14 +98,14 @@ const PreOrderView = (props) => {
                                         "m-1 ccircle white-titanium",
                                         "m-1 ccircle black-titanium"
                                     ]}
-                                    urlIphone="apple-iphone-16-pro-max"
+                                    urlIphone={`${urlIphone16}-promax`}
                                 />
                                 <ItemIphone
                                     imageUrl="/assets/img/iPhone_16_Pro.webp"
                                     handlePhoneSelection={handlePhoneSelection}
                                     buttonDisabled={buttonDisabled}
                                     title="iPhone 16 Pro"
-                                    price="from RM 4999"
+                                    price="From RM4,999"
                                     memory="128GB | 256GB | 512GB | 1TB"
                                     color={[
                                         "m-1 ccircle desert-titanium",
@@ -111,14 +113,14 @@ const PreOrderView = (props) => {
                                         "m-1 ccircle white-titanium",
                                         "m-1 ccircle black-titanium"
                                     ]}
-                                    urlIphone="apple-iphone-16-pro"
+                                    urlIphone={`${urlIphone16}-pro`}
                                 />
                                 <ItemIphone
                                     imageUrl="/assets/img/iPhone_16_Plus.webp"
                                     handlePhoneSelection={handlePhoneSelection}
                                     buttonDisabled={buttonDisabled}
                                     title="iPhone 16 Plus"
-                                    price="from RM 4499"
+                                    price="From RM4,499"
                                     memory="128GB | 256GB | 512GB"
                                     color={[
                                         "m-1 ccircle ultramarine",
@@ -127,14 +129,14 @@ const PreOrderView = (props) => {
                                         "m-1 ccircle white",
                                         "m-1 ccircle black"
                                     ]}
-                                    urlIphone="apple-iphone-16-plus"
+                                    urlIphone={`${urlIphone16}-plus`}
                                 />
                                 <ItemIphone
                                     imageUrl="/assets/img/iPhone_16.webp"
                                     handlePhoneSelection={handlePhoneSelection}
                                     buttonDisabled={buttonDisabled}
                                     title="iPhone 16"
-                                    price="from RM 3999"
+                                    price="From RM3,999"
                                     memory="128GB | 256GB | 512GB"
                                     color={[
                                         "m-1 ccircle ultramarine",
@@ -143,7 +145,7 @@ const PreOrderView = (props) => {
                                         "m-1 ccircle white",
                                         "m-1 ccircle black"
                                     ]}
-                                    urlIphone="apple-iphone-16"
+                                    urlIphone={`${urlIphone16}`}
                                 />
                             </div>
                         </div>

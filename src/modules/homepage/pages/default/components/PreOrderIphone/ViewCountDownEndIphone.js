@@ -11,7 +11,7 @@ const ViewCountDownEnd = () => {
     })
     return (
         <>
-            <h2>Pre-Order end in</h2>
+            <h2>Pre-Order Ends In</h2>
             <div className="countdown-timer">
                 <div>
                     <p>{maskDays}</p>

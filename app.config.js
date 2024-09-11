@@ -7,9 +7,14 @@ const hostPreorderIphone = 'https://senheng-pwa-staging.sandbox.id/';
 const tokenApi = 'djisajd891ye918';
 const apiAddQueue = 'https://microservice.senheng.com.my/api/queue/add';
 const apiCheckQueue = 'https://microservice.senheng.com.my/api/queue/check';
-const GTM = {
+const urlIphone16 = 'iphone-16';
+const GTMSenheng = {
     enable: true,
     gtmId: 'GTM-P2J3ZCPB',
+}
+const GTMSenq = {
+    enable: true,
+    gtmId: 'GTM-NCWRMV5L',
 }
 
 module.exports = {
@@ -22,5 +27,7 @@ module.exports = {
     tokenApi,
     apiAddQueue,
     apiCheckQueue,
-    GTM,
+    GTMSenheng,
+    GTMSenq,
+    urlIphone16,
 }

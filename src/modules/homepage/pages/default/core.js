@@ -17,15 +17,19 @@ const Microsite = () => {
     const tagManagerArgs = {
         gtmId:
             typeof publicRuntimeConfig !== 'undefined' && GTMSenheng.gtmId[publicRuntimeConfig.appEnv]
-                ? storeCode === 'senheng_malay_en_US' 
-                    ? GTMSenheng.gtmId[publicRuntimeConfig.appEnv]
-                    : GTMSenq.gtmId[publicRuntimeConfig.appEnv]
-                : storeCode === 'senheng_malay_en_US' ? GTMSenheng.gtmId : GTMSenq.gtmId,
+                ? GTMSenheng.gtmId[publicRuntimeConfig.appEnv]
+                : GTMSenheng.gtmId,
+    };
+    const tagManagerArgsSenq = {
+        gtmId:
+            typeof publicRuntimeConfig !== 'undefined' && GTMSenq.gtmId[publicRuntimeConfig.appEnv]
+                ? GTMSenq.gtmId[publicRuntimeConfig.appEnv]
+                : GTMSenq.gtmId,
     };
 
     React.useEffect(() => {
         if (GTMSenheng.enable) {
-            TagManager.initialize(tagManagerArgs);
+            TagManager.initialize(storeCode === 'senheng_malay_en_US' ? tagManagerArgs : tagManagerArgsSenq);
             TagManager.dataLayer({
                 dataLayer: {
                     pageName: storeCode === 'senheng_malay_en_US' ? 'senheng-waiting-room' : 'senq-waiting-room',

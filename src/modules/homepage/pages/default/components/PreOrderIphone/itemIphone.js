@@ -31,6 +31,8 @@ const ItemIphone = (props) => {
                         ))
                     }
                 </div>
+                <p className="desc mb-0">Pre-order starting 13 Sept, 8PM.</p>
+                <p className="desc mb-0">Available starting 20 Sept.</p>
                 <button
                     disabled={buttonDisabled}
                     className={buttonDisabled ? 'dialog-button-disabled' : 'dialog-button'}

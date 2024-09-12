@@ -8,12 +8,27 @@ import {
     apiCheckQueue,
     tokenApi,
     storeCode,
+    urlIphone16,
 } from '@config';
 import ModalOffers from './PreOrderIphone/modalOffers';
+import ViewCountDownEnd from './PreOrderIphone/ViewCountDownEndIphone';
+import ViewCountDownStart from './PreOrderIphone/ViewCountDownStartIphone';
+import ItemIphone from './PreOrderIphone/itemIphone';
+import Outlet from './PreOrderIphone/Outlet';
 
 let globalInterval = null;
 const Microsite = (props) => {
-    const { router, lineQueue, seriesIphone, estimation } = props;
+    const {
+        router,
+        lineQueue,
+        seriesIphone,
+        estimation,
+        startPreOrder,
+        setStartPreOrder,
+        handlePhoneSelection,
+        buttonDisabled
+    } = props;
+    console.log(props);
 
     const checkQueue = async () => {
         const response = await fetch(`${apiCheckQueue}?key=${Cookies.get('preOrderUid')}&series=${seriesIphone}`, {
@@ -118,6 +133,130 @@ const Microsite = (props) => {
                     </div>
                 </div>
             </div>
+            <div className="countdown">
+                {
+                    !startPreOrder ? (
+                        <ViewCountDownStart startPreOrder={startPreOrder} setStartPreOrder={setStartPreOrder}/>
+                    ) : (
+                        <ViewCountDownEnd />
+                    )
+                }
+                
+            </div>
+            {
+                startPreOrder && (
+                    <>
+                        <div className="choose-iphone" id="choose-iphone">
+                            <h2 className="font-weight-bold mb-5 heading-title">Choose your iPhone.</h2>
+                            <div className="choose-iphone__wrapper custom-scrollbar">
+                                <ItemIphone
+                                    imageUrl="/assets/img/iPhone_16_Pro_Max.webp"
+                                    handlePhoneSelection={handlePhoneSelection}
+                                    buttonDisabled={buttonDisabled}
+                                    title="iPhone 16 Pro Max"
+                                    price="From RM5,999"
+                                    memory="256GB | 512GB | 1TB"
+                                    color={[
+                                        "m-1 ccircle desert-titanium",
+                                        "m-1 ccircle natural-titanium",
+                                        "m-1 ccircle white-titanium",
+                                        "m-1 ccircle black-titanium"
+                                    ]}
+                                    urlIphone={`${urlIphone16}-promax`}
+                                />
+                                <ItemIphone
+                                    imageUrl="/assets/img/iPhone_16_Pro.webp"
+                                    handlePhoneSelection={handlePhoneSelection}
+                                    buttonDisabled={buttonDisabled}
+                                    title="iPhone 16 Pro"
+                                    price="From RM4,999"
+                                    memory="128GB | 256GB | 512GB | 1TB"
+                                    color={[
+                                        "m-1 ccircle desert-titanium",
+                                        "m-1 ccircle natural-titanium",
+                                        "m-1 ccircle white-titanium",
+                                        "m-1 ccircle black-titanium"
+                                    ]}
+                                    urlIphone={`${urlIphone16}-pro`}
+                                />
+                                <ItemIphone
+                                    imageUrl="/assets/img/iPhone_16_Plus.webp"
+                                    handlePhoneSelection={handlePhoneSelection}
+                                    buttonDisabled={buttonDisabled}
+                                    title="iPhone 16 Plus"
+                                    price="From RM4,499"
+                                    memory="128GB | 256GB | 512GB"
+                                    color={[
+                                        "m-1 ccircle ultramarine",
+                                        "m-1 ccircle teal",
+                                        "m-1 ccircle pink",
+                                        "m-1 ccircle white",
+                                        "m-1 ccircle black"
+                                    ]}
+                                    urlIphone={`${urlIphone16}-plus`}
+                                />
+                                <ItemIphone
+                                    imageUrl="/assets/img/iPhone_16.webp"
+                                    handlePhoneSelection={handlePhoneSelection}
+                                    buttonDisabled={buttonDisabled}
+                                    title="iPhone 16"
+                                    price="From RM3,999"
+                                    memory="128GB | 256GB | 512GB"
+                                    color={[
+                                        "m-1 ccircle ultramarine",
+                                        "m-1 ccircle teal",
+                                        "m-1 ccircle pink",
+                                        "m-1 ccircle white",
+                                        "m-1 ccircle black"
+                                    ]}
+                                    urlIphone={`${urlIphone16}`}
+                                />
+                            </div>
+                        </div>
+                        <div className="compare-models">
+                            <div className="row banner-content">
+                                <div className="col-lg-4 banner-content__desc">
+                                    <div>
+                                        <h2 className='font-weight-bold'>Compare Models</h2>
+                                        <p>Explore the differences between iPhone models to find the one that suits your needs</p>
+                                        <a href="https://www.senheng.com.my/iphone-comparison-learn-more" target="_blank">COMPARE iPHONE {">"}</a>
+                                    </div>
+                                </div>
+                                <div className="col-lg-8 banner-content__image">
+                                    <img src="/assets/img/compare_iphone_models.webp" />
+                                </div>
+                            </div>
+                        </div>
+                    </>
+                )
+            }
+            <div className="partnership">
+                <h2 class="mb-5">More Offers</h2>
+                <div className="partnership-wrapper">
+                    <div className="partnership-item">
+                        <img src="/assets/img/grab.webp" alt="grab" />
+                    </div>
+                    <div className="partnership-item">
+                        <img src="/assets/img/atome.webp" alt="grab" />
+                    </div>
+                    <div className="partnership-item">
+                        <img src="/assets/img/spay.webp" alt="grab" />
+                    </div>
+                    <div className="partnership-item">
+                        <img src="/assets/img/maybank.webp" alt="grab" />
+                    </div>
+                    <div className="partnership-item">
+                        <img src="/assets/img/uob.webp" alt="grab" />
+                    </div>
+                    <div className="partnership-item">
+                        <img src="/assets/img/affin.webp" alt="grab" />
+                    </div>
+                    <div className="partnership-item">
+                        <img src="/assets/img/aeon.webp" alt="grab" />
+                    </div>
+                </div>
+            </div>
+            <Outlet />
         </div>
     );
 };

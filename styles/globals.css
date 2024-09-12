@@ -526,6 +526,9 @@ a {
   justify-content: center;
   gap: 40px;
 }
+.accordion .accordion-body .card-body {
+  padding: 0;
+}
 .outlet .outlet-content .accordion .accordion-item {
   width: 50%;
 }
@@ -584,6 +587,9 @@ a {
 .main-logo img {
   max-width: 200px;
   height: auto;
+}
+.container-microsite {
+  padding-bottom: 128px;
 }
 
 @media (max-width: 1025px) {

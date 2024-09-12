@@ -1,10 +1,11 @@
 import useCountDown from '../../../../../helper/countdown';
 
 const ViewCountDownStart = (props) => {
-    const { setStartPreOrder } = props;
+    const { setStartPreOrder = () => {} } = props;
     const startDate = new Date();
     const endDate = new Date('September 13, 2024 20:00:00');
     const releaseDate = (endDate - startDate) / 1000;
+    
     const { maskDays, maskHours, maskMinutes, maskSeconds } = useCountDown({
         time: 10,
         validation: true,

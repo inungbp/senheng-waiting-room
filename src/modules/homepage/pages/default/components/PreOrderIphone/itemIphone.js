@@ -26,8 +26,8 @@ const ItemIphone = (props) => {
                 <p className="card-text prod-desc mb-0">{memory}</p>
                 <div className="d-flex mb-4 justfiy-content-center color-picker">
                     {
-                        color.map((item) => (
-                            <div className={item} />
+                        color.map((item, idx) => (
+                            <div key={idx} className={item} />
                         ))
                     }
                 </div>

@@ -20,26 +20,31 @@ let globalInterval = null;
 const Microsite = (props) => {
     const {
         router,
-        lineQueue,
-        seriesIphone,
-        estimation,
         startPreOrder,
         setStartPreOrder,
         handlePhoneSelection,
         buttonDisabled
     } = props;
-    console.log(props);
 
     const checkQueue = async () => {
-        const response = await fetch(`${apiCheckQueue}?key=${Cookies.get('preOrderUid')}&series=${seriesIphone}`, {
+        const response = await fetch(`${apiCheckQueue}?key=${Cookies.get('preOrderUid')}&series=${Cookies.get('seriesIphone16')}`, {
             headers: {
                 Authorization: `Bearer ${tokenApi}`,
                 Accept: 'application/json',
             },
         });
         const dataQueue = await response.json();
-        if (dataQueue && dataQueue.is_pdp) {
-            router.push(`${hostPreorderIphone}/${seriesIphone}.html?key=${Cookies.get('preOrderUid')}&series=${seriesIphone}`);
+        if (dataQueue) {
+            if (dataQueue && dataQueue.is_pdp) {
+                // redirect pdp
+                router.push(`${hostPreorderIphone}/${Cookies.get('seriesIphone16')}.html?key=${Cookies.get('preOrderUid')}&series=${Cookies.get('seriesIphone16')}`);
+                Cookies.remove('line');
+                Cookies.remove('time');
+            } else {
+                // update line & estimation
+                Cookies.set('line', dataQueue?.position);
+                Cookies.set('time', dataQueue?.estimation);
+            }
         }
     };
 
@@ -64,8 +69,8 @@ const Microsite = (props) => {
                         <h2>You are now in line</h2>
                         <p>Sit tight! Your turn is almost here. When it comes, you’ll have 20 minutes to browse & purchase. Please do not close or refresh the page.</p>
                         <div>
-                            <p>Your number in line: {lineQueue}</p>
-                            <p>Your estimated wait time: {estimation} minutes</p>
+                            <p>Your number in line: {Cookies.get('line')}</p>
+                            <p>Your estimated wait time: {Cookies.get('time')} minutes</p>
                         </div>
                     </div>
                     <div className="wrapper-countdown__content--img">
@@ -77,7 +82,7 @@ const Microsite = (props) => {
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen
+                            allowFullScreen
                         />
                     </div>
                 </div>
@@ -231,7 +236,7 @@ const Microsite = (props) => {
                 )
             }
             <div className="partnership">
-                <h2 class="mb-5">More Offers</h2>
+                <h2 className="mb-5">More Offers</h2>
                 <div className="partnership-wrapper">
                     <div className="partnership-item">
                         <img src="/assets/img/grab.webp" alt="grab" />

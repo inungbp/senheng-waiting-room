@@ -168,7 +168,7 @@ const PreOrderView = (props) => {
             }
 
             <div className="partnership">
-                <h2 class="mb-5">More Offers</h2>
+                <h2 className="mb-5">More Offers</h2>
                 <div className="partnership-wrapper">
                     <div className="partnership-item">
                         <img src="/assets/img/grab.webp" alt="grab" />

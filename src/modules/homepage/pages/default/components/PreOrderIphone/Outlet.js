@@ -17,20 +17,20 @@ const Outlet = () => {
                     <Accordion.Item eventKey="0">
                         <Accordion.Header>T&C</Accordion.Header>
                         <Accordion.Body>
-                            <div class="mb-5">
-                                <h5 class="fw-bold mt-4">TERMS AND CONDITION</h5>
+                            <div className="mb-5">
+                                <h5 className="fw-bold mt-4">TERMS AND CONDITION</h5>
                                 <p>The Apple iPhone Pre-order Campaign ("Campaign") is organised by Senheng Electric (KL) Sdn. Bhd ("Senheng"). The terms and conditions and the Privacy Policy posted on this site will be construed as the terms and conditions ("Terms and Conditions") of this Campaign on which Senheng offers you ("Customer") access to and use of this site for the purposes of this Campaign.</p>
 
-                                <h5 class="fw-bold mt-4">Duration:</h5>
+                                <h5 className="fw-bold mt-4">Duration:</h5>
                                 <p>The Campaign will run from 13 September 2024 20:00 to 19 September 2024 23:59. Senheng reserves the right to shorten, extend or cancel the Campaign Period without prior notice.</p>
 
-                                <h5 class="fw-bold mt-4">Eligibility:</h5>
+                                <h5 className="fw-bold mt-4">Eligibility:</h5>
                                 <p>The Promotion is open to all Malaysian Citizens of 18 years old and above with Malaysia Identity Card; except Senheng’s employees (and their immediate families), its related agencies, retailers and dealers.</p>
 
-                                <h5 class="fw-bold mt-4">Payment:</h5>
+                                <h5 className="fw-bold mt-4">Payment:</h5>
                                 <p>Customer acknowledges, understands and agrees that all transactions are between Customer and iPay88. Customer is not allowed to cancel the order, change the selected device color or model and the selected store once Customer has successfully completed and confirmed the transaction via iPay88.</p>
 
-                                <h5 class="fw-bold mt-4">Privacy:</h5>
+                                <h5 className="fw-bold mt-4">Privacy:</h5>
                                 <p>By providing Customer's personal data, Customer is indicating that he/she has read, understood and agreed that his/her personal data will be recorded, stored or otherwise processed in accordance to Senheng's Privacy Policy available at https://www.senheng.com.my/privacy-notice Senheng Electric (KL) Sdn Bhd (Senheng and/or senQ) reserves the right to change or revise or any part thereof or any part of the applicable terms and conditions from time to time, with or without any prior notice.</p>
 
                             </div>
@@ -39,17 +39,17 @@ const Outlet = () => {
                     <Accordion.Item eventKey="1">
                         <Accordion.Header>FAQ</Accordion.Header>
                         <Accordion.Body>
-                            <div class="card-body text-left">
-                                <h5 class="fw-bold mt-4">FAQ</h5>
+                            <div className="card-body text-left">
+                                <h5 className="fw-bold mt-4">FAQ</h5>
 
-                                <h5 class="fw-bold">(P1 - EXTRA 2 YEARS WARRANTY)</h5>
+                                <h5 className="fw-bold">(P1 - EXTRA 2 YEARS WARRANTY)</h5>
                                 <p>How can I enjoy extra 2 years warranty for this pre-order campaign for Apple iPhones?</p>
                                 <ul>
                                     <li>New Member = You need to sign up for our P1 membership (here) and pay a membership fee of RM12. Upon successful sign up, login to your account and start to make the purchase in order to ensure that your first sales entitles for the Extra 2 Years Warranty.</li>
                                     <li>Existing Member = You need to ensure that you login to your account and start to make purchase in order to ensure that your purchase entitles for the Extra 2 Years Warranty.</li>
                                 </ul>
                             
-                                <h5 class="fw-bold mt-4">Warranty:</h5>
+                                <h5 className="fw-bold mt-4">Warranty:</h5>
                                 <p>What is the warranty offer?</p>
                                 <ul>
                                     <li>Non P1 member = Customer who is non P1 member will only entitle 1-year manufacturer warranty for smartphone in this campaign.</li>
@@ -64,7 +64,7 @@ const Outlet = () => {
                                 <ul>
                                     <li>Customer is not allowed to change the selected device color or model once the Customer has successfully completed and confirmed the transaction via iPay88.</li>
                                 </ul>
-                                <h5 class="fw-bold mt-4">Payment:</h5>
+                                <h5 className="fw-bold mt-4">Payment:</h5>
                                 <p>(0% INTEREST INSTALMENT) Can I pay the balance amount of my purchase via Instalment?</p>
                                 <ul>
                                     <li>Yes, you can pay RM300 deposit through our website and make balance payment at our nationwide showrooms for up to 60 months 0% Interest Instalment payment via all major banks.</li>
@@ -75,7 +75,7 @@ const Outlet = () => {
                                     <li>Yes, you may make purchase via PayLater by Grab, Atome, PAYLATER at both online and retail stores. SPayLater by Shopee and Boost PayFlex only applicable at retail stores.</li>
                                 </ul>
 
-                                <h5 class="fw-bold mt-4">Others:</h5>
+                                <h5 className="fw-bold mt-4">Others:</h5>
                                 <p>(ACCESSORIES) During store pick-up, can I purchase other related accessories?</p>
                                 <ul>
                                     <li>Yes you can, all you need to do is to speak to our in-store sales personnel or call to Customer Care Centre for any inquries.</li>

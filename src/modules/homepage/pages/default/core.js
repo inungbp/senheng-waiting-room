@@ -10,7 +10,6 @@ import { hostPreorderIphone, apiAddQueue, tokenApi } from '@config';
 
 const Microsite = () => {
     const PreOrderIphone = dynamic(() => import('./components/PreOrderIphone'), { ssr: false });
-    const [lineQueue, setLineQueue] = React.useState(0);
     const [seriesIphone, setSeriesIphone] = React.useState('');
     const [estimation, setEstimation] = React.useState(0);
     const [startPreOrder, setStartPreOrder] = React.useState(false);
@@ -20,6 +19,7 @@ const Microsite = () => {
 
     const handleSubmitWaitingRoom = async (series) => {
         setSeriesIphone(series);
+        Cookies.set('seriesIphone16', series);
         const response = await fetch(`${apiAddQueue}?key=${Cookies.get('preOrderUid')}&series=${series}`, {
             method: 'POST',
             headers: {
@@ -29,8 +29,6 @@ const Microsite = () => {
         });
         const dataQueue = await response.json();
         if (dataQueue) {
-            setLineQueue(dataQueue?.position);
-            setEstimation(dataQueue?.estimation);
             TagManager.dataLayer({
                 dataLayer: {
                     pageName: 'senheng-waiting-room',
@@ -44,6 +42,9 @@ const Microsite = () => {
                 // router.push(`/?key=${Cookies.get('preOrderUid')}&position=${dataQueue?.position}`);
                 router.push(`${hostPreorderIphone}/${series}.html?key=${Cookies.get('preOrderUid')}&series=${series}`);
             } else {
+                // enter line & estimation
+                Cookies.set('line', dataQueue?.position);
+                Cookies.set('time', dataQueue?.estimation);
                 router.push(`/?key=${Cookies.get('preOrderUid')}&position=${dataQueue?.position}`);
             }
         }
@@ -90,7 +91,6 @@ const Microsite = () => {
         return (
             <div>
                 <PreOrderIphone
-                    setLineQueue={setLineQueue}
                     seriesIphone={seriesIphone}
                     setSeriesIphone={setSeriesIphone}
                     setEstimation={setEstimation}
@@ -108,7 +108,6 @@ const Microsite = () => {
         <div>
             <Component
                 router={router}
-                lineQueue={lineQueue}
                 seriesIphone={seriesIphone}
                 setSeriesIphone={setSeriesIphone}
                 setEstimation={setEstimation}

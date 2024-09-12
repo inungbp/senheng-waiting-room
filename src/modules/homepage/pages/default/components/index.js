@@ -6,7 +6,8 @@ import {
     intervalCheckStatus,
     hostPreorderIphone,
     apiCheckQueue,
-    tokenApi
+    tokenApi,
+    storeCode,
 } from '@config';
 import ModalOffers from './PreOrderIphone/modalOffers';
 
@@ -37,6 +38,11 @@ const Microsite = (props) => {
 
     return (
         <div className="container-microsite">
+            <div className="main-logo">
+                <a href={`https://${storeCode === "senheng_malay_en_US" ? "senheng" : "senq"}.com.my`} target="_blank">
+                    <img src={storeCode === "senheng_malay_en_US" ? "/assets/img/senheng_logo.webp" : "/assets/img/senq_logo.webp"} />
+                </a>
+            </div>
             <div className="wrapper-countdown">
                 <div className="wrapper-countdown__content">
                     <div className="wrapper-countdown__content--desc">
@@ -51,7 +57,7 @@ const Microsite = (props) => {
                         <iframe
                             width="560"
                             height="315"
-                            src="https://www.youtube.com/embed/GDlkCkcIqTs?si=-wdI59wZ8XhwIS1q"
+                            src="https://www.youtube.com/embed/7iFGFMX3PVs?si=2X-VkaZoWVLAzDfx"
                             title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

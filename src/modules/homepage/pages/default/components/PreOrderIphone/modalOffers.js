@@ -61,7 +61,7 @@ const ModalOffers = () => {
                         </div>
                     </Tab>
                     <Tab eventKey="content6" title="Free Shipping*">
-                        Free shipping is only valid for Google Pixel campaign and from 14th August 2024 - 13 September 2024 *
+                        Free Delivery for iPhone 16 from 13 September - 12 October 2024
                     </Tab>
                 </Tabs>
                 </Modal.Body>

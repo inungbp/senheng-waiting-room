@@ -166,8 +166,7 @@ a {
   margin-bottom: 0;
 }
 .banner-content h5 {
-  font-size: 16px;
-  margin-bottom: 0;
+  margin-bottom: .5rem;
 }
 .banner-content p {
   margin-top: 8px;
@@ -839,9 +838,6 @@ a {
   }
   .banner-content a {
     font-size: 16px;
-  }
-  .banner-content h5 {
-    font-size: 12px;
   }
 
   .countdown h2 {

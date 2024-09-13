@@ -56,7 +56,7 @@ const ModalOffers = () => {
                         <p>get additional rebate up to RM500* upon purchase.</p>
                         <div className="learn-more">
                             <button>
-                                <a href="https://magento.senheng.com.my/media/pdf/shsq/iPhone-Trade-Up-list-for-New.pdf" target="_blank">Learn More</a>
+                                <a href="https://magento.senheng.com.my/media/pdf/shsq/iPhone_16_Trade_Up_List_v2.pdf" target="_blank">Learn More</a>
                             </button>
                         </div>
                     </Tab>

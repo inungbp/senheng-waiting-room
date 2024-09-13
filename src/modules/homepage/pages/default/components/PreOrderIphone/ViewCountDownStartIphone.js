@@ -7,7 +7,7 @@ const ViewCountDownStart = (props) => {
     const releaseDate = (endDate - startDate) / 1000;
     
     const { maskDays, maskHours, maskMinutes, maskSeconds } = useCountDown({
-        time: 10,
+        time: Math.trunc(releaseDate),
         validation: true,
         onTimesUp: () => { setStartPreOrder(true); },
     })

@@ -8,6 +8,7 @@ const ItemIphone = (props) => {
         price,
         memory,
         urlIphone,
+        startPreOrder,
     } = props;
 
     return (
@@ -31,15 +32,23 @@ const ItemIphone = (props) => {
                         ))
                     }
                 </div>
-                <p className="desc mb-0">Pre-order starting 13 Sept, 8PM.</p>
+                {
+                    startPreOrder ? null : (
+                        <p className="desc mb-0">Pre-order starting 13 Sept, 8PM.</p>
+                    )
+                }
                 <p className="desc mb-0">Available starting 20 Sept.</p>
-                <button
-                    disabled={buttonDisabled}
-                    className={buttonDisabled ? 'dialog-button-disabled' : 'dialog-button'}
-                    onClick={() => handlePhoneSelection(urlIphone)}
-                >
-                    {buttonDisabled ? 'COMING SOON' : 'PRE-ORDER NOW'}
-                </button>
+                {
+                    startPreOrder ? (
+                        <button
+                            disabled={buttonDisabled}
+                            className={buttonDisabled ? 'dialog-button-disabled' : 'dialog-button'}
+                            onClick={() => handlePhoneSelection(urlIphone)}
+                        >
+                            {buttonDisabled ? 'COMING SOON' : 'PRE-ORDER NOW'}
+                        </button>
+                    ) : null
+                }
             </div>
         </div>
     )
